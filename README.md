@@ -16,3 +16,65 @@ Omitir a parte de protocolo (http:, https:) de URLs
 <!-- Recomendado -->
 <script src="//github.com/InfoJrUFBA/info_style_guide/edit/master/README.md"></script>
 ```
+####1.2 - Idioma
+Todo o código deve ser escrito em inglês, com exceção do conteúdo que vai ser apresentado ao usuário final, este último deve ser escrito em português do Brasil. 
+
+####1.2 - Identação
+A indentação padrão é de quatro espaços. Não utilize tabs junto com espaços. 
+```html
+HTML
+
+<ul>
+  <li>Diretoria de Projetos</li>
+  <li>Diretoria Administrativa Financeira</li>
+</ul>
+```
+__________________________________________________________________________________________________________________________
+```css
+CSS
+
+ul{
+  color: red;
+}
+```
+__________________________________________________________________________________________________________________________
+```php
+PHP
+
+<?php
+  function creatUser(){
+  }
+?>
+```
+
+####1.3 - Espaços
+Remova os espaços existentes no final das linhas.
+```html
+HTML
+
+<!-- Não Recomendado -->
+<p>Infojr</p>___
+
+<!-- Recomendado -->
+<p>Infojr</p>
+```
+
+####1.3 - Codificação de Caracteres
+Verifique se o seu editor usa UTF-8 como codificação de caracteres. É importante que especifique a codificação em templates HTML e documentos via <meta charset="utf-8">.
+
+####1.3 - Comentários
+Utilize os comentários para explicar o código, conforme necessário, sempre que possível. Indicando o que ele cobre, qual a finalidade, para que serve, e etc. Isso facilita a compreensão do mesmo por outras pessoas que tiverem acesso ao seu código. 
+
+###2 - Regras de Estilos
+####2.1 - HTML
+#####Tipo de Documento
+Use HTML5. O HTML5 é o preferido para todos os documentos HTML. Recomenda-se utilizar o HTML como text/html. Não use XHTML. XHTML, como application/xhtml+xml, pois carece de suporte ao navegador e infraestrutura, além de oferecer menos espaço para sua otimização. 
+Ao definir o tipo de documento utilize a tag que expresse que a versão utilizada será o HTML5.
+```
+<!-- Não Recomendado -->
+<title>Test </ title>
+
+<!-- Recomendado -->
+
+```
+
