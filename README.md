@@ -71,10 +71,108 @@ Utilize os comentários para explicar o código, conforme necessário, sempre qu
 Use HTML5. O HTML5 é o preferido para todos os documentos HTML. Recomenda-se utilizar o HTML como text/html. Não use XHTML. XHTML, como application/xhtml+xml, pois carece de suporte ao navegador e infraestrutura, além de oferecer menos espaço para sua otimização. 
 Ao definir o tipo de documento utilize a tag que expresse que a versão utilizada será o HTML5.
 ```
-<!-- Não Recomendado -->
-<title>Test </ title>
-
 <!-- Recomendado -->
-
+<!DOCTYPE hmtl>
+<meta charset = "utf-8"
+<title>Test</title>
+<article>Este é apenas um teste.</article>
 ```
 
+#####Use o HTML de acordo com sua finalidade
+Use os elementos(“tags”) para designar a função cuja a qual você tem preferência. Por exemplo, **p** que serve para parágrafos, **a** para links, e etc. A utilização do HTML de acordo com sua finalidade é importante por razões de acessibilidade, reutilização e eficiência do código.
+```html
+<!-- Não Recomendado -->
+<div onclick = "goToRecommendations ();">Todas as recomendações</div>
+
+<!-- Recomendado -->
+<a href="recomendations">Todas as recomendações</a>
+```
+
+#####Aspas
+Use aspas duplas para os atributos html.
+```html
+<!-- Não Recomendado -->
+<inpút type ='text' name='user[name]' id='user_name'>
+
+<!-- Recomendado -->
+<inpút type ="text" name="user[name]" id="user_name">
+```
+
+#####Valide sua página
+Sempre que possível verifique se sua página HTML segue os padrões estabelecidos pelo W3C.
+
+####2.2 - CSS
+#####Nomeclatura para classes e IDS
+Utilize nomes que refletem a finalidade do elemento em questão.	Nomes que são específicos apresentam o real objetivo, são compreensíveis e estão menos propensos a serem mudados. Nomes mais simples também podem ser utilizados.
+```css
+ID
+
+/*Não Recomendado*/
+#yee-1901{}
+#navegação
+
+/*Recomendado*/
+#gallery{}
+#nav{}
+______________________________________________________________________________________________________________________________
+CLASS
+
+/*Não Recomendado*/
+.button-verde{}
+.claro{}
+.atr{}
+
+/*Recomendado*/
+.button{}
+.video{}
+.aux{}
+```
+
+#####Evite nomeação de classes e IDs com o uso de seletores
+A menos que necessário (por exemplo, com classes auxiliares), não use nomes de elementos em conjunto com IDs ou classes.
+```css
+ID
+
+/*Não Recomendado*/
+Ul#example{}
+
+/*Recomendado*/
+#example{}
+______________________________________________________________________________________________________________________________
+CLASS
+
+/*Não Recomendado*/
+.div.error{}
+
+/*Recomendado*/
+.erro{}
+```
+
+#####Faça uso da Taquigrafia (escrita rápida)
+O CSS oferece uma variedade de taquigrafia, propriedade que permite a escrita do código de maneira mais resumida. É interessante a utilização da mesma sempre que possível, mesmo nos casos em que apenas um valor é definido. 
+```css
+/*Não Recomendado*/
+-top border-style: none;
+font-family: Palatino, geórgia, serif;
+font-size: 100%;
+line-height: 1.6;
+padding-bottom: 2em;
+padding-left: 1em;
+padding-right: 1em;
+padding-top: 0;
+
+/*Recomendado*/
+border-top: 0;
+font: 100%/1.6 palatino, geórgia, serif;
+padding: 0 1em 2em;
+```
+
+#####Notação Hexadecimal
+Use 3 caracteres para notação hexadecimal sempre que possível. 
+```css
+/*Não Recomendado*/
+color: #EEBBCC;
+
+/*Recomendado*/
+color: #EBC;
+```
