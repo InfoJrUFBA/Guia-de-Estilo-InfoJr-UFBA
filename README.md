@@ -73,9 +73,9 @@ Ao definir o tipo de documento utilize a tag que expresse que a versão utilizad
 ```
 <!-- Recomendado -->
 <!DOCTYPE hmtl>
-<meta charset = "utf-8"
+<meta charset = "utf-8">
 <title>Test</title>
-<article>Este é apenas um teste.</article>
+<h1>Este é apenas um teste.</h1>
 ```
 
 #####Use o HTML de acordo com sua finalidade
