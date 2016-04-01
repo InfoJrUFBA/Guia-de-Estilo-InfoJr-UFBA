@@ -21,8 +21,12 @@ Todo o código deve ser escrito em Inglês, com exceção do conteúdo que vai s
 
 ####1.3 - Última linha
 Todo o código deve ser escrito em Inglês, com exceção do conteúdo que vai ser apresentado ao usuário final, este último deve ser escrito em português do Brasil.
-
-####1.2 - Identação
+```php
+function createBadge() {
+    // ...
+}
+```
+####1.4 - Identação
 A indentação padrão é de quatro espaços. Não utilize tabs junto com espaços. 
 ```html
 HTML
@@ -46,12 +50,11 @@ PHP
 
 <?php
     function creatUser(){
-    
     }
 ?>
 ```
 
-####1.3 - Espaços
+####1.5 - Espaços
 Remova os espaços existentes no final das linhas.
 ```html
 HTML
@@ -63,10 +66,10 @@ HTML
 <p>Infojr</p>
 ```
 
-####1.3 - Codificação de Caracteres
+####1.6 - Codificação de Caracteres
 Verifique se o seu editor usa UTF-8 como codificação de caracteres. É importante que especifique a codificação em templates HTML e documentos via <meta charset="utf-8">.
 
-####1.3 - Comentários
+####1.7 - Comentários
 Utilize os comentários para explicar o código, conforme necessário, sempre que possível. Indicando o que ele cobre, qual a finalidade, para que serve, e etc. Isso facilita a compreensão do mesmo por outras pessoas que tiverem acesso ao seu código. 
 
 ###2 - REGRAS DE ESTILO
@@ -74,14 +77,23 @@ Utilize os comentários para explicar o código, conforme necessário, sempre qu
 #####Tipo de Documento
 Use HTML5. O HTML5 é o preferido para todos os documentos HTML. Recomenda-se utilizar o HTML como text/html. Não use XHTML. XHTML, como application/xhtml+xml, pois carece de suporte ao navegador e infraestrutura, além de oferecer menos espaço para sua otimização. 
 Ao definir o tipo de documento utilize a tag que expresse que a versão utilizada será o HTML5.
-```
+```html
 <!-- Recomendado -->
 <!DOCTYPE hmtl>
-<meta charset = "utf-8">
-<title>Test</title>
-<h1>Este é apenas um teste.</h1>
 ```
-
+#####Codificação de Caracteres
+Use o UTF-8 para codificar os caracteres da sua página.
+```html
+<meta charset="utf-8">
+```
+#####Escrita
+Utilize sempre letras minúsculas para representar tags e atributos.
+```html
+<!-- Não recomendado -->
+<A HREF="/">Home</A>
+<!-- Recomendado -->
+<a href="/">Home</a>
+```
 #####Use o HTML de acordo com sua finalidade
 Use os elementos(“tags”) para designar a função que você tem preferência. Por exemplo, **p**, que serve para parágrafos, **a**, para links, e etc. A utilização do HTML de acordo com sua finalidade é importante por razões de acessibilidade, reutilização e eficiência do código.
 ```html
@@ -90,7 +102,7 @@ Use os elementos(“tags”) para designar a função que você tem preferência
 
 <!-- Recomendado -->
 <div class="btn-group">
-  <button>Algo</button>
+    <button>Algo</button>
 </div>
 ```
 
@@ -108,6 +120,43 @@ Use aspas duplas para os atributos html.
 Sempre que possível verifique se sua página HTML segue os padrões estabelecidos pelo W3C.
 
 ####2.2 - CSS
+#####Escrita
+Utilize sempre letras minúsculas para representar tags, propriedades e valores quando possível.
+```css
+/* Não recomendado */
+H1 {
+    FONT-SIZE: 20PX;
+}
+/* Recomendado */
+h1 {
+    font-size: 20px;
+}
+```
+#####Aspas
+Use aspas simples quando necessário.
+/* Não recomendado */
+p {
+    font-family: "Comic Sans MS", sans-serif;
+}
+/* Recomendado */
+p {
+    font-family: 'Comic Sans MS', sans-serif;
+}
+#####Ordem de Declaração
+As propriedades devem ser declaradas em ordem alfabética. Contudo, as propriedades de terceiros (-moz-, -webkit-) devem ser ordenadas juntos às propriedades que estas alteram.
+```css
+input {
+    background: fuchsia;
+    border-radius: 4px;
+    border: 1px solid;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    color: black;
+    text-align: center;
+    text-indent: 2em;
+}
+```
+**Dica:** Com o Sulime Text você pode selecionar as propiedades e pressionar F5 para ordená-las em ordem alfabética.
 #####Nomeclatura para classes e IDs
 Utilize nomes que refletem a finalidade do elemento em questão.	Nomes que são específicos representam o real objetivo, são compreensíveis e estão menos propensos a serem mudados. Nomes mais simples também podem ser utilizados.
 ```css
@@ -186,14 +235,14 @@ Finalize todas as declarações de propriedades utilizando um *;*
 ```css
 /*Não Recomendado*/
 div{
-  color: blue
-  font-family: 'Times New Roman', serif
+    color: blue
+    font-family: 'Times New Roman', serif
 }
 
 /*Recomendado*/
 div{
-  color: blue;
-  font-family: 'Times New Roman', serif;
+    color: blue;
+    font-family: 'Times New Roman', serif;
 }
 ```
 
@@ -218,13 +267,62 @@ Sempre utilize um espaço simples parar separar uma propriedade dos seus valores
 ```css
 /*Não Recomendado*/
 p {
-  color:blue;
+    color:blue;
 }
 /*Recomendado*/
 p {  
-  color: blue;
+    color: blue;
 }
 ```
+#####Valide o seu estilo
+Sempre que possível verifique se o seu arquivo CSS segue os padrões propostos pela W3C.
+
+####2.3 - JavaScript
+O guia de estilo para JavaScript é baseado no [documento](http://javascript.crockford.com/code.html) escrito por Douglas Crockford. Se alguma regra não estiver escrita aqui tome o documento original como base.
+#####Arquivos JavaScript
+Use tags <script> o mais tarde possível (geralmente antes de fechar a tag body). Isso reduz o atraso para carregar uma página. Não é necessário adicionar os atributos tipo ou language.
+
+#####Largura da linha
+Evite escrever linhas com mais de 120 caracteres. Em alguns casos será necessário quebrar comandos. Nesse caso quebre a linha depois de um operador.
+
+#####Comentários
+Use comentários se somente necessário. Não comente coisas óbvias como:
+```
+ var i = 0; // Atribui à variável i o valor zero.
+```
+Você deve comentar funções utilizando o padrão DocBlock:
+
+```
+/**
+* Descrição do método...
+*
+* @method myFunction
+* @param {String} myVariable
+* @return {Array}
+*/
+function myFunction(myVariable) {
+    return [myVariable];
+}
+```
+#####Declaração de váriaveis
+Sempre declare variáveis antes de usá-las.
+```
+ var name;
+ var email;
+```
+#####Declaração de funções
+Todas as funções devem ser declaradas antes de serem usadas. Não deve haver espaços entre o nome da função e o parêntese de abertura ((), mas deve haver um espaço no fechar de parênteses e abertura de chaves ({).
+```javascript
+function validate(attribute, options) {
+    return true;
+}
+```
+#####Nomes
+Ao definir variáveis e funções opte por utilizar valores que tenham signicado e que expressem o que será armazenado ou calculado na mesma.
+
+#####Comandos
+Todos os comandos devem ser terminados por ponto e vírgula (;).
+
 
 ###3 - EDITORES DE TEXTO
 A seguir alguns editores de textos que podem ser utilizados no desenvolvimento dos projetos.
@@ -254,7 +352,18 @@ Apesar de ser um editor com pouco tempo no mercado já conta com uma grande quan
 
 ####3.2 - Sublime
 Um editor de texto simples, limpo, leve e muito customizável.
-#####3.2.1 - Configurações do Sublime parar aplicação de [Regras Gerais](#1---regras-gerais)
+#####3.2.1 - Configurações do Sublime parar aplicação das [Regras Gerais](#1---regras-gerais)
+O Sublime Text permite que você altere as configurações padrões para realizar certas tarefas. Para alterar as configurações clique em Preferences → Settings – User.
+
+As configurações necessárias para realizar as regras gerais expostas na seção anterior de forma automática estão descritas a seguir:
+```
+{
+    "ensure_newline_at_eof_on_save": true,
+    "tab_size": 4,
+    "translate_tabs_to_spaces": true,
+    "trim_trailing_white_space_on_save": true
+}
+```
 #####3.2.1 - Atalhos do teclado
 O Sublime tem muitos comandos escondidos que podem não estar listados nos menus. Você pode acioná-los pelo teclado acionando os comandos pelo controle de acesso *CMD+SHIFT+P*. A seguir alguns deles:
 
