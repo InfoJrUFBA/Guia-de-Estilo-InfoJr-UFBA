@@ -254,6 +254,7 @@ Apesar de ser um editor com pouco tempo no mercado já conta com uma grande quan
 
 ####3.2 - Sublime
 Um editor de texto simples, limpo, leve e muito customizável.
+#####3.2.1 - Configurações do Sublime parar aplicação de [Regras Gerais](#1---regras-gerais)
 #####3.2.1 - Atalhos do teclado
 O Sublime tem muitos comandos escondidos que podem não estar listados nos menus. Você pode acioná-los pelo teclado acionando os comandos pelo controle de acesso *CMD+SHIFT+P*. A seguir alguns deles:
 
