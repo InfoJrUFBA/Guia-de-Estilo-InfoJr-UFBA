@@ -2,7 +2,7 @@
 Guia de estilização de código da InfoJr UFBA
 
 ### Motivação
-A necessidade de dispor de uma sistema que unifique a forma com que são feitos códigos das linguagens de programação e estilização dos projetos para que facilite o armazenamento e acesso dos mesmos pelos seus membros, assim como a falta de maturidade e de preparo dos trainees em interagir com a estrutura dos códigos dos projetos já finalizados, acaba por interferir de forma direta no seu aprendizado e em tudo aquilo que foi produzido pela empresa, e mediante a isso temos como intuito desse texto a criação de um documento ainda em construção, com ajuda de todos os membros da InfoJr UFBA, com uma orientação disposta de regras de formatação para as tecnologias utilizadas no desenvolvimento dos projetos da Empresa dos próximos anos.
+A necessidade de dispor de um guia que unifique a forma com que são feitos códigos das linguagens de programação e estilização dos projetos para que facilite o armazenamento e acesso dos mesmos pelos seus membros. Assim como a falta de maturidade e de preparo dos trainees em interagir com a estrutura dos códigos dos projetos já finalizados acaba por interferir de forma direta no seu aprendizado e em tudo aquilo que foi produzido pela empresa. Mediante a isso, temos como intuito desse texto a criação de um documento ainda em construção, com ajuda de todos os membros da InfoJr UFBA, com uma orientação disposta de regras de formatação para as tecnologias utilizadas no desenvolvimento dos projetos da Empresa dos próximos anos.
 
 ###1 - REGRAS GERAIS
 As regras descritas nesta seção devem ser aplicadas para qualquer arquivo independente da linguagem a ser utilizada.
@@ -17,16 +17,16 @@ Omitir a parte de protocolo (http:, https:) de URLs
 <script src="//github.com/InfoJrUFBA/info_style_guide/edit/master/README.md"></script>
 ```
 ####1.2 - Idioma
-Todo o código deve ser escrito em inglês, com exceção do conteúdo que vai ser apresentado ao usuário final, este último deve ser escrito em português do Brasil. 
+Todo o código deve ser escrito em Inglês, com exceção do conteúdo que vai ser apresentado ao usuário final, este último deve ser escrito em português do Brasil. 
 
 ####1.2 - Identação
-A indentação padrão é de quatro espaços. Não utilize tabs junto com espaços. 
+A indentação padrão é de quatro espaços. Não utilize tabs junto com espaços. 
 ```html
 HTML
 
 <ul>
-  <li>Diretoria de Projetos</li>
-  <li>Diretoria Administrativa Financeira</li>
+    <li>Diretoria de Projetos</li>
+    <li>Diretoria Administrativa Financeira</li>
 </ul>
 ```
 _____________________________________________________________________________________________________
@@ -34,7 +34,7 @@ ________________________________________________________________________________
 CSS
 
 ul{
-  color: red;
+    color: red;
 }
 ```
 _____________________________________________________________________________________________________
@@ -42,8 +42,9 @@ ________________________________________________________________________________
 PHP
 
 <?php
-  function creatUser(){
-  }
+    function creatUser(){
+    
+    }
 ?>
 ```
 
@@ -79,7 +80,7 @@ Ao definir o tipo de documento utilize a tag que expresse que a versão utilizad
 ```
 
 #####Use o HTML de acordo com sua finalidade
-Use os elementos(“tags”) para designar a função cuja a qual você tem preferência. Por exemplo, **p** que serve para parágrafos, **a** para links, e etc. A utilização do HTML de acordo com sua finalidade é importante por razões de acessibilidade, reutilização e eficiência do código.
+Use os elementos(“tags”) para designar a função que você tem preferência. Por exemplo, **p**, que serve para parágrafos, **a**, para links, e etc. A utilização do HTML de acordo com sua finalidade é importante por razões de acessibilidade, reutilização e eficiência do código.
 ```html
 <!-- Não Recomendado -->
 <p><button>Algo</button></p>
@@ -104,8 +105,8 @@ Use aspas duplas para os atributos html.
 Sempre que possível verifique se sua página HTML segue os padrões estabelecidos pelo W3C.
 
 ####2.2 - CSS
-#####Nomeclatura para classes e IDS
-Utilize nomes que refletem a finalidade do elemento em questão.	Nomes que são específicos apresentam o real objetivo, são compreensíveis e estão menos propensos a serem mudados. Nomes mais simples também podem ser utilizados.
+#####Nomeclatura para classes e IDs
+Utilize nomes que refletem a finalidade do elemento em questão.	Nomes que são específicos representam o real objetivo, são compreensíveis e estão menos propensos a serem mudados. Nomes mais simples também podem ser utilizados.
 ```css
 ID
 
@@ -115,7 +116,7 @@ ID
 
 /*Recomendado*/
 #gallery{}
-#nav{}
+#navigation{}
 __________________________________________________________________________________________________________
 CLASS
 
@@ -125,7 +126,7 @@ CLASS
 
 /*Recomendado*/
 .video{}
-.aux{}
+.auxiliar{}
 ```
 
 #####Evite nomeação de classes e IDs com o uso de seletores
@@ -145,11 +146,11 @@ CLASS
 .div.error{}
 
 /*Recomendado*/
-.erro{}
+.error{}
 ```
 
 #####Faça uso da Taquigrafia (escrita rápida)
-O CSS oferece uma variedade de taquigrafia, propriedade que permite a escrita do código de maneira mais resumida. É interessante a utilização da mesma sempre que possível, mesmo nos casos em que apenas um valor é definido. 
+O CSS oferece uma variedade de taquigrafia, propriedade que permite a escrita do código de maneira mais resumida. É interessante a utilização da mesma sempre que possível, mesmo nos casos em que apenas um valor é definido. 
 ```css
 /*Não Recomendado*/
 -top border-style: none;
@@ -163,12 +164,12 @@ padding-top: 0;
 
 /*Recomendado*/
 border-top: 0;
-font: 100%/1.6 palatino, geórgia, serif;
+font: 100%/1.6 Palatino, Georgia, serif;
 padding: 0 1em 2em;
 ```
 
 #####Notação Hexadecimal
-Use 3 caracteres para notação hexadecimal sempre que possível. 
+Use 3 caracteres para notação hexadecimal sempre que possível.
 ```css
 /*Não Recomendado*/
 color: #EEBBCC;
@@ -193,19 +194,19 @@ div{
 }
 ```
 
-#####Delimitadores de Classe e Ids
-Busque ao máximo escrever classes e ids com nomes simples, mas no caso de palavras compostas utilize hifens (-) para classes e subtraços (_) para ids.
+#####Delimitadores de classes e IDs
+Busque ao máximo escrever classes e IDs com nomes simples, mas no caso de palavras compostas utilize hifens (-) para classes e subtraços (_) para IDs.
 ```css
 ID
 
-#new_user{
-  /*..*/
+#new_user {
+    /*..*/
 }
 __________________________________________________________________________________________________________
 CLASS
 
-.btn-primary{
-   /*..*/
+.btn-primary {
+    /*..*/
 }
 ```
 
@@ -213,11 +214,11 @@ CLASS
 Sempre utilize um espaço simples parar separar uma propriedade dos seus valores
 ```css
 /*Não Recomendado*/
-p{
+p {
   color:blue;
 }
 /*Recomendado*/
-p{  
+p {  
   color: blue;
 }
 ```
@@ -310,13 +311,3 @@ O Package Control é um plug-in que gerencia todos os outros plug-ins do Sublime
 **CSS3**: Esse plug-in serve para manter uma boa organização no CSS. Existem casos onde queremos acabar ir logo embora para casa e acabamos esquecendo um simples “;“. O CSS3 Syntax ou apenas CSS3 é bem abrangente, pois se baseia nos mais recentes projetos e especificações atuais. Uso: Navegue até View > Syntax > CSS3. 
 
 **Javascriptnext**: Este é um pacote de sintaxe melhorada para Java Script. Baseia-se nos arquivos de linguagem comumente usados ​​e também inclui novos recursos de ECMAScript 6 como módulos, métodos, arrows functions, classes, geradores e assessores (ES5). Se você quiser usá-lo para cada arquivo js, você ​​cria ou abra um arquivo Java Script, e daí clica no nome de sintaxe no canto inferior direito do Sublime, em seguida, clique em “Abrir todos com extensão atual e depois selecione JavascriptNext – ES6 > JavascriptNext.
- 
-
-
- 
-
-
-
-
-
-
