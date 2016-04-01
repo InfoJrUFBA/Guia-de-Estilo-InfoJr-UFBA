@@ -17,7 +17,10 @@ Omitir a parte de protocolo (http:, https:) de URLs
 <script src="//github.com/InfoJrUFBA/info_style_guide/edit/master/README.md"></script>
 ```
 ####1.2 - Idioma
-Todo o código deve ser escrito em Inglês, com exceção do conteúdo que vai ser apresentado ao usuário final, este último deve ser escrito em português do Brasil. 
+Todo o código deve ser escrito em Inglês, com exceção do conteúdo que vai ser apresentado ao usuário final, este último deve ser escrito em português do Brasil.
+
+####1.3 - Última linha
+Todo o código deve ser escrito em Inglês, com exceção do conteúdo que vai ser apresentado ao usuário final, este último deve ser escrito em português do Brasil.
 
 ####1.2 - Identação
 A indentação padrão é de quatro espaços. Não utilize tabs junto com espaços. 
