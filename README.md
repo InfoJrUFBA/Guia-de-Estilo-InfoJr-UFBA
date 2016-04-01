@@ -1,13 +1,12 @@
-# info_style_guide
-Guia de estilização de código da InfoJr UFBA
+#Guia de estilização de código da InfoJr UFBA
 
 ### Motivação
-A necessidade de dispor de um guia que unifique a forma com que são feitos códigos das linguagens de programação e estilização dos projetos para que facilite o armazenamento e acesso dos mesmos pelos seus membros. Assim como a falta de maturidade e de preparo dos trainees em interagir com a estrutura dos códigos dos projetos já finalizados acaba por interferir de forma direta no seu aprendizado e em tudo aquilo que foi produzido pela empresa. Mediante a isso, temos como intuito desse texto a criação de um documento ainda em construção, com ajuda de todos os membros da InfoJr UFBA, com uma orientação disposta de regras de formatação para as tecnologias utilizadas no desenvolvimento dos projetos da Empresa dos próximos anos.
+O guia abaixo é um documento em construção que tem como finalidade padronizar o desenvolvimento de códigos nas linguagens de programação e estilização dos projetos, e que facilite o acesso e compreensão dos mesmos pelos seus membros.
 
-###1 - REGRAS GERAIS
+### 1 - REGRAS GERAIS
 As regras descritas nesta seção devem ser aplicadas para qualquer arquivo independente da linguagem a ser utilizada.
 
-####1.1 - Protocolo para recursos externos
+#### 1.1 - Protocolo para recursos externos
 Omitir a parte de protocolo (http:, https:) de URLs
 ```html 
 <!-- Não Recomendado -->
@@ -16,17 +15,17 @@ Omitir a parte de protocolo (http:, https:) de URLs
 <!-- Recomendado -->
 <script src="//github.com/InfoJrUFBA/info_style_guide/edit/master/README.md"></script>
 ```
-####1.2 - Idioma
+#### 1.2 - Idioma
 Todo o código deve ser escrito em Inglês, com exceção do conteúdo que vai ser apresentado ao usuário final, este último deve ser escrito em português do Brasil.
 
-####1.3 - Última linha
+#### 1.3 - Última linha
 Todo o código deve ser escrito em Inglês, com exceção do conteúdo que vai ser apresentado ao usuário final, este último deve ser escrito em português do Brasil.
 ```php
 function createBadge() {
     // ...
 }
 ```
-####1.4 - Identação
+#### 1.4 - Identação
 A indentação padrão é de quatro espaços. Não utilize tabs junto com espaços. 
 ```html
 HTML
@@ -54,7 +53,7 @@ PHP
 ?>
 ```
 
-####1.5 - Espaços
+#### 1.5 - Espaços
 Remova os espaços existentes no final das linhas.
 ```html
 HTML
@@ -66,27 +65,27 @@ HTML
 <p>Infojr</p>
 ```
 
-####1.6 - Codificação de Caracteres
+#### 1.6 - Codificação de Caracteres
 Verifique se o seu editor usa UTF-8 como codificação de caracteres. É importante que especifique a codificação em templates HTML e documentos via <meta charset="utf-8">.
 
-####1.7 - Comentários
+#### 1.7 - Comentários
 Utilize os comentários para explicar o código, conforme necessário, sempre que possível. Indicando o que ele cobre, qual a finalidade, para que serve, e etc. Isso facilita a compreensão do mesmo por outras pessoas que tiverem acesso ao seu código. 
 
-###2 - REGRAS DE ESTILO
-####2.1 - HTML
-#####Tipo de Documento
+### 2 - REGRAS DE ESTILO
+#### 2.1 - HTML
+##### Tipo de Documento
 Use HTML5. O HTML5 é o preferido para todos os documentos HTML. Recomenda-se utilizar o HTML como text/html. Não use XHTML. XHTML, como application/xhtml+xml, pois carece de suporte ao navegador e infraestrutura, além de oferecer menos espaço para sua otimização. 
 Ao definir o tipo de documento utilize a tag que expresse que a versão utilizada será o HTML5.
 ```html
 <!-- Recomendado -->
 <!DOCTYPE hmtl>
 ```
-#####Codificação de Caracteres
+##### Codificação de Caracteres
 Use o UTF-8 para codificar os caracteres da sua página.
 ```html
 <meta charset="utf-8">
 ```
-#####Escrita
+##### Escrita
 Utilize sempre letras minúsculas para representar tags e atributos.
 ```html
 <!-- Não recomendado -->
@@ -94,7 +93,7 @@ Utilize sempre letras minúsculas para representar tags e atributos.
 <!-- Recomendado -->
 <a href="/">Home</a>
 ```
-#####Use o HTML de acordo com sua finalidade
+##### Use o HTML de acordo com sua finalidade
 Use os elementos(“tags”) para designar a função que você tem preferência. Por exemplo, **p**, que serve para parágrafos, **a**, para links, e etc. A utilização do HTML de acordo com sua finalidade é importante por razões de acessibilidade, reutilização e eficiência do código.
 ```html
 <!-- Não Recomendado -->
@@ -106,7 +105,7 @@ Use os elementos(“tags”) para designar a função que você tem preferência
 </div>
 ```
 
-#####Aspas
+##### Aspas
 Use aspas duplas para os atributos html.
 ```html
 <!-- Não Recomendado -->
@@ -116,11 +115,11 @@ Use aspas duplas para os atributos html.
 <inpút type ="text" name="user[name]" id="user_name">
 ```
 
-#####Valide sua página
+##### Valide sua página
 Sempre que possível verifique se sua página HTML segue os padrões estabelecidos pelo W3C.
 
 ####2.2 - CSS
-#####Escrita
+##### Escrita
 Utilize sempre letras minúsculas para representar tags, propriedades e valores quando possível.
 ```css
 /* Não recomendado */
@@ -132,7 +131,7 @@ h1 {
     font-size: 20px;
 }
 ```
-#####Aspas
+##### Aspas
 Use aspas simples quando necessário.
 /* Não recomendado */
 p {
@@ -142,7 +141,7 @@ p {
 p {
     font-family: 'Comic Sans MS', sans-serif;
 }
-#####Ordem de Declaração
+##### Ordem de Declaração
 As propriedades devem ser declaradas em ordem alfabética. Contudo, as propriedades de terceiros (-moz-, -webkit-) devem ser ordenadas juntos às propriedades que estas alteram.
 ```css
 input {
@@ -157,7 +156,7 @@ input {
 }
 ```
 **Dica:** Com o Sulime Text você pode selecionar as propiedades e pressionar F5 para ordená-las em ordem alfabética.
-#####Nomeclatura para classes e IDs
+##### Nomeclatura para classes e IDs
 Utilize nomes que refletem a finalidade do elemento em questão.	Nomes que são específicos representam o real objetivo, são compreensíveis e estão menos propensos a serem mudados. Nomes mais simples também podem ser utilizados.
 ```css
 ID
@@ -181,7 +180,7 @@ CLASS
 .auxiliar{}
 ```
 
-#####Evite nomeação de classes e IDs com o uso de seletores
+##### Evite nomeação de classes e IDs com o uso de seletores
 A menos que necessário (por exemplo, com classes auxiliares), não use nomes de elementos em conjunto com IDs ou classes.
 ```css
 ID
@@ -201,36 +200,36 @@ CLASS
 .error{}
 ```
 
-#####Faça uso da Taquigrafia (escrita rápida)
+##### Faça uso da Taquigrafia (escrita rápida)
 O CSS oferece uma variedade de taquigrafia, propriedade que permite a escrita do código de maneira mais resumida. É interessante a utilização da mesma sempre que possível, mesmo nos casos em que apenas um valor é definido. 
 ```css
 /*Não Recomendado*/
--top border-style: none;
-font-family: Palatino, geórgia, serif;
-font-size: 100%;
-line-height: 1.6;
-padding-bottom: 2em;
-padding-left: 1em;
-padding-right: 1em;
-padding-top: 0;
+    -top border-style: none;
+    font-family: Palatino, geórgia, serif;
+    font-size: 100%;
+    line-height: 1.6;
+    padding-bottom: 2em;
+    padding-left: 1em;
+    padding-right: 1em;
+    padding-top: 0;
 
 /*Recomendado*/
-border-top: 0;
-font: 100%/1.6 Palatino, Georgia, serif;
-padding: 0 1em 2em;
+    border-top: 0;
+    font: 100%/1.6 Palatino, Georgia, serif;
+    padding: 0 1em 2em;
 ```
 
-#####Notação Hexadecimal
+##### Notação Hexadecimal
 Use 3 caracteres para notação hexadecimal sempre que possível.
 ```css
 /*Não Recomendado*/
-color: #EEBBCC;
+    color: #EEBBCC;
 
 /*Recomendado*/
-color: #EBC;
+    color: #EBC;
 ```
 
-#####Utilização de ponto e vírgula
+##### Utilização de ponto e vírgula
 Finalize todas as declarações de propriedades utilizando um *;*
 ```css
 /*Não Recomendado*/
@@ -246,7 +245,7 @@ div{
 }
 ```
 
-#####Delimitadores de classes e IDs
+##### Delimitadores de classes e IDs
 Busque ao máximo escrever classes e IDs com nomes simples, mas no caso de palavras compostas utilize hifens (-) para classes e subtraços (_) para IDs.
 ```css
 ID
@@ -262,7 +261,7 @@ CLASS
 }
 ```
 
-#####Separação entre propriedades e valores
+##### Separação entre propriedades e valores
 Sempre utilize um espaço simples parar separar uma propriedade dos seus valores
 ```css
 /*Não Recomendado*/
@@ -274,18 +273,17 @@ p {
     color: blue;
 }
 ```
-#####Valide o seu estilo
+##### Valide o seu estilo
 Sempre que possível verifique se o seu arquivo CSS segue os padrões propostos pela W3C.
 
-####2.3 - JavaScript
+#### 2.3 - JavaScript
 O guia de estilo para JavaScript é baseado no [documento](http://javascript.crockford.com/code.html) escrito por Douglas Crockford. Se alguma regra não estiver escrita aqui tome o documento original como base.
-#####Arquivos JavaScript
+##### Arquivos JavaScript
 Use tags <script> o mais tarde possível (geralmente antes de fechar a tag body). Isso reduz o atraso para carregar uma página. Não é necessário adicionar os atributos tipo ou language.
-
 #####Largura da linha
 Evite escrever linhas com mais de 120 caracteres. Em alguns casos será necessário quebrar comandos. Nesse caso quebre a linha depois de um operador.
 
-#####Comentários
+##### Comentários
 Use comentários se somente necessário. Não comente coisas óbvias como:
 ```
  var i = 0; // Atribui à variável i o valor zero.
@@ -304,31 +302,31 @@ function myFunction(myVariable) {
     return [myVariable];
 }
 ```
-#####Declaração de váriaveis
+##### Declaração de váriaveis
 Sempre declare variáveis antes de usá-las.
 ```
  var name;
  var email;
 ```
-#####Declaração de funções
+##### Declaração de funções
 Todas as funções devem ser declaradas antes de serem usadas. Não deve haver espaços entre o nome da função e o parêntese de abertura ((), mas deve haver um espaço no fechar de parênteses e abertura de chaves ({).
 ```javascript
 function validate(attribute, options) {
     return true;
 }
 ```
-#####Nomes
+##### Nomes
 Ao definir variáveis e funções opte por utilizar valores que tenham signicado e que expressem o que será armazenado ou calculado na mesma.
 
-#####Comandos
+##### Comandos
 Todos os comandos devem ser terminados por ponto e vírgula (;).
 
 
-###3 - EDITORES DE TEXTO
+### 3 - EDITORES DE TEXTO
 A seguir alguns editores de textos que podem ser utilizados no desenvolvimento dos projetos.
-####3.1 - Brackets
+#### 3.1 - Brackets
 Um editor de textos Open Source que vem crescendo a uma grande velocidade, alcançando alguns editores de texto já consolidados no mercado.
-#####3.1.1 - Atalhos do teclado
+##### 3.1.1 - Atalhos do teclado
 O Brackets, assim como outros editores e softwares, tem seus atalhos para agilizar o dia-a-dia de quem trabalha com tais ferramentas. Abaixo alguns atalhos interessantes:
 
 **Crtrl+Shift+A**: Abre um input para você digitar uma tag e teclar “Enter”. Fazendo isso, ele irá inserir a tag completa com seu fechamento e seus atributos no html. Ex.: Digite link e tecle “Enter”, ele vai retornar <link rel=”stylesheet” href=””>. E quando você dá “Enter” o “ponteiro” do mouse vai para dentro das aspas do atributo href. Daí, basta você começar a digitar o endereço que ele vai mostrando as opções em forma de codehint. 
@@ -339,7 +337,7 @@ O Brackets, assim como outros editores e softwares, tem seus atalhos para agiliz
 
 **Crtrl+E**: Uma das grandes novidades do Brackets. Com esse atalho você pode editar o CSS sem ter que abrir o arquivo .css. Basta ir em um arquivo .html ou .php clicar sobre o elemento que deseja alterar as propriedades e pressionar Ctrl+E para abrir a tela de edição.
 
-#####3.1.2 - Extensões
+##### 3.1.2 - Extensões
 Apesar de ser um editor com pouco tempo no mercado já conta com uma grande quantidade de plug-ins para dar aquela incrementada no workflow. Segue alguns deles que podem ser utilizados: 
 
 **Brackets Git**: Bastante completo, disponibiliza uma interface para você usar o controle de versões mais utilizado por todos. Para aqueles que não gostam de usar o git através de interfaces, ele te dá, de fácil acesso, um botão que leva diretamente para o terminal, aberto já na pasta do projeto, sem ter que navegar até o projeto pelo terminal.
@@ -350,9 +348,9 @@ Apesar de ser um editor com pouco tempo no mercado já conta com uma grande quan
 
 **Indent Guide**: Muito bom para facilitar a leitura do código e evitar que você deixe tags HTML abertas sem querer. Ele cria uma linha guia ligando a tag de abertura e a tag de fechamento de determinado elemento, assim você pode verificar se está tudo identado e fechado corretamente.
 
-####3.2 - Sublime
+#### 3.2 - Sublime
 Um editor de texto simples, limpo, leve e muito customizável.
-#####3.2.1 - Configurações do Sublime parar aplicação das [Regras Gerais](#1---regras-gerais)
+##### 3.2.1 - Configurações do Sublime parar aplicação das [Regras Gerais](#1---regras-gerais)
 O Sublime Text permite que você altere as configurações padrões para realizar certas tarefas. Para alterar as configurações clique em Preferences → Settings – User.
 
 As configurações necessárias para realizar as regras gerais expostas na seção anterior de forma automática estão descritas a seguir:
@@ -364,7 +362,7 @@ As configurações necessárias para realizar as regras gerais expostas na seç�
     "trim_trailing_white_space_on_save": true
 }
 ```
-#####3.2.1 - Atalhos do teclado
+##### 3.2.1 - Atalhos do teclado
 O Sublime tem muitos comandos escondidos que podem não estar listados nos menus. Você pode acioná-los pelo teclado acionando os comandos pelo controle de acesso *CMD+SHIFT+P*. A seguir alguns deles:
 
 **Configurando um atalho de comando**: O usuário pode instalar um comando subl no seu terminal para facilitar a abertura de projetos no Sublime via terminal. Você pode conferir o passo a passo da configuração através do seguinte link: Configurandosublime. 
@@ -399,7 +397,7 @@ Se você quiser ir para uma linha específica, você pode começar a busca com 
  - Duplicar linha: *CTRL +SHIFT+D*
  - Juntar linhas: *CTRL +J*
  
-#####3.2.2 - Extensões
+##### 3.2.2 - Extensões
 Assim como no Brackets o sublime apresenta alguns plug-ins que facilita a vida dos desenvolvedores. Alguns recomendados que você pode utilizar: 
 
 **Package Control**: Antes de instalar qualquer pacote de plug-in, é importante que você já tenha instalado em seu Sublime o Package Control de acordo com a versão do Sublime utilizada. 
