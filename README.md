@@ -279,7 +279,7 @@ Sempre que possível verifique se o seu arquivo CSS segue os padrões propostos 
 #### 2.3 - JavaScript
 O guia de estilo para JavaScript é baseado no [documento](http://javascript.crockford.com/code.html) escrito por Douglas Crockford. Se alguma regra não estiver escrita aqui tome o documento original como base.
 ##### Arquivos JavaScript
-Use tags <script> o mais tarde possível (geralmente antes de fechar a tag body). Isso reduz o atraso para carregar uma página. Não é necessário adicionar os atributos tipo ou language.
+Use tags ```<script>``` o mais tarde possível (geralmente antes de fechar a tag body). Isso reduz o atraso para carregar uma página. Não é necessário adicionar os atributos tipo ou language.
 #####Largura da linha
 Evite escrever linhas com mais de 120 caracteres. Em alguns casos será necessário quebrar comandos. Nesse caso quebre a linha depois de um operador.
 
