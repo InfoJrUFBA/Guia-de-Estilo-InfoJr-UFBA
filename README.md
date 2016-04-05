@@ -7,7 +7,7 @@ O guia abaixo é um documento em construção que tem como finalidade padronizar
 As regras descritas nesta seção devem ser aplicadas para qualquer arquivo independente da linguagem a ser utilizada.
 
 #### 1.1 - Protocolo para recursos externos
-Omitir a parte de protocolo (http:, https:) de URLs
+Omitir a parte de protocolo ```(http:, https:)``` de URLs
 
 ```html 
 <!-- Não Recomendado -->
@@ -77,7 +77,11 @@ HTML
 Verifique se o seu editor usa UTF-8 como codificação de caracteres. É importante que especifique a codificação em templates HTML e documentos via ```<meta charset="utf-8">```.
 
 #### 1.7 - Comentários
-Utilize os comentários para explicar o código, conforme necessário, sempre que possível. Indicando o que ele cobre, qual a finalidade, para que serve, e etc. Isso facilita a compreensão do mesmo por outras pessoas que tiverem acesso ao seu código. 
+Utilize os comentários para explicar o código, conforme necessário, sempre que possível. Indicando o que ele cobre, qual a finalidade, para que serve, e etc. Isso facilita a compreensão do mesmo por outras pessoas que tiverem acesso ao seu código. Para fazer um comentário, envolva o exemple desejado entre ```<!-- -->```.
+
+```
+<!--Este é um comentário. Comentários não são exibidos no navegador.-->
+```
 
 ### 2 - REGRAS DE ESTILO
 #### 2.1 - HTML
@@ -88,13 +92,6 @@ Ao definir o tipo de documento utilize a tag que expresse que a versão utilizad
 ```html
 <!-- Recomendado -->
 <!DOCTYPE hmtl>
-```
-
-##### Codificação de Caracteres
-Use o UTF-8 para codificar os caracteres da sua página.
-
-```html
-<meta charset="utf-8">
 ```
 
 ##### Escrita
