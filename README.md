@@ -8,6 +8,7 @@ As regras descritas nesta seção devem ser aplicadas para qualquer arquivo inde
 
 #### 1.1 - Protocolo para recursos externos
 Omitir a parte de protocolo (http:, https:) de URLs
+
 ```html 
 <!-- Não Recomendado -->
 <script src="https://github.com/InfoJrUFBA/info_style_guide/edit/master/README.md"></script>
@@ -15,18 +16,22 @@ Omitir a parte de protocolo (http:, https:) de URLs
 <!-- Recomendado -->
 <script src="//github.com/InfoJrUFBA/info_style_guide/edit/master/README.md"></script>
 ```
+
 #### 1.2 - Idioma
 Todo o código deve ser escrito em Inglês, com exceção do conteúdo que vai ser apresentado ao usuário final, este último deve ser escrito em português do Brasil.
 
 #### 1.3 - Última linha
 Todo o código deve ser escrito em Inglês, com exceção do conteúdo que vai ser apresentado ao usuário final, este último deve ser escrito em português do Brasil.
+
 ```php
 function createBadge() {
     // ...
 }
 ```
+
 #### 1.4 - Identação
 A indentação padrão é de quatro espaços. Não utilize tabs junto com espaços. 
+
 ```html
 HTML
 
@@ -36,6 +41,7 @@ HTML
 </ul>
 ```
 _____________________________________________________________________________________________________
+
 ```css
 CSS
 
@@ -44,17 +50,19 @@ ul{
 }
 ```
 _____________________________________________________________________________________________________
+
 ```php
 PHP
 
 <?php
-    function creatUser(){
+    function creatUser() {
     }
 ?>
 ```
 
 #### 1.5 - Espaços
 Remova os espaços existentes no final das linhas.
+
 ```html
 HTML
 
@@ -66,7 +74,7 @@ HTML
 ```
 
 #### 1.6 - Codificação de Caracteres
-Verifique se o seu editor usa UTF-8 como codificação de caracteres. É importante que especifique a codificação em templates HTML e documentos via <meta charset="utf-8">.
+Verifique se o seu editor usa UTF-8 como codificação de caracteres. É importante que especifique a codificação em templates HTML e documentos via ```<meta charset="utf-8">```.
 
 #### 1.7 - Comentários
 Utilize os comentários para explicar o código, conforme necessário, sempre que possível. Indicando o que ele cobre, qual a finalidade, para que serve, e etc. Isso facilita a compreensão do mesmo por outras pessoas que tiverem acesso ao seu código. 
@@ -76,25 +84,32 @@ Utilize os comentários para explicar o código, conforme necessário, sempre qu
 ##### Tipo de Documento
 Use HTML5. O HTML5 é o preferido para todos os documentos HTML. Recomenda-se utilizar o HTML como text/html. Não use XHTML. XHTML, como application/xhtml+xml, pois carece de suporte ao navegador e infraestrutura, além de oferecer menos espaço para sua otimização. 
 Ao definir o tipo de documento utilize a tag que expresse que a versão utilizada será o HTML5.
+
 ```html
 <!-- Recomendado -->
 <!DOCTYPE hmtl>
 ```
+
 ##### Codificação de Caracteres
 Use o UTF-8 para codificar os caracteres da sua página.
+
 ```html
 <meta charset="utf-8">
 ```
+
 ##### Escrita
 Utilize sempre letras minúsculas para representar tags e atributos.
+
 ```html
 <!-- Não recomendado -->
 <A HREF="/">Home</A>
 <!-- Recomendado -->
 <a href="/">Home</a>
 ```
+
 ##### Use o HTML de acordo com sua finalidade
 Use os elementos(“tags”) para designar a função que você tem preferência. Por exemplo, **p**, que serve para parágrafos, **a**, para links, e etc. A utilização do HTML de acordo com sua finalidade é importante por razões de acessibilidade, reutilização e eficiência do código.
+
 ```html
 <!-- Não Recomendado -->
 <p><button>Algo</button></p>
@@ -107,20 +122,22 @@ Use os elementos(“tags”) para designar a função que você tem preferência
 
 ##### Aspas
 Use aspas duplas para os atributos html.
+
 ```html
 <!-- Não Recomendado -->
-<inpút type ='text' name='user[name]' id='user_name'>
+<input type='text' name='user[name]' id='user_name'>
 
 <!-- Recomendado -->
-<inpút type ="text" name="user[name]" id="user_name">
+<input type="text" name="user[name]" id="user_name">
 ```
 
 ##### Valide sua página
-Sempre que possível verifique se sua página HTML segue os padrões estabelecidos pelo W3C.
+Sempre que possível verifique se sua página HTML segue os padrões estabelecidos pelo [W3C](http://www.w3schools.com/).
 
 ####2.2 - CSS
 ##### Escrita
 Utilize sempre letras minúsculas para representar tags, propriedades e valores quando possível.
+
 ```css
 /* Não recomendado */
 H1 {
@@ -131,6 +148,7 @@ h1 {
     font-size: 20px;
 }
 ```
+
 ##### Aspas
 Use aspas simples quando necessário.
 /* Não recomendado */
@@ -142,7 +160,8 @@ p {
     font-family: 'Comic Sans MS', sans-serif;
 }
 ##### Ordem de Declaração
-As propriedades devem ser declaradas em ordem alfabética. Contudo, as propriedades de terceiros (-moz-, -webkit-) devem ser ordenadas juntos às propriedades que estas alteram.
+As propriedades devem ser declaradas em ordem alfabética. Contudo, as propriedades de terceiros ```(-moz-, -webkit-)``` devem ser ordenadas juntos às propriedades que estas alteram.
+
 ```css
 input {
     background: fuchsia;
@@ -155,15 +174,17 @@ input {
     text-indent: 2em;
 }
 ```
+
 **Dica:** Com o Sulime Text você pode selecionar as propiedades e pressionar F5 para ordená-las em ordem alfabética.
 ##### Nomeclatura para classes e IDs
 Utilize nomes que refletem a finalidade do elemento em questão.	Nomes que são específicos representam o real objetivo, são compreensíveis e estão menos propensos a serem mudados. Nomes mais simples também podem ser utilizados.
+
 ```css
 ID
 
 /*Não Recomendado*/
-#yee-1901{}
-#navegação
+#yee-1901 {}
+#navegação {}
 
 /*Recomendado*/
 #gallery{}
@@ -172,36 +193,38 @@ ________________________________________________________________________________
 CLASS
 
 /*Não Recomendado*/
-.claro{}
-.atr{}
+.claro {}
+.atr {}
 
 /*Recomendado*/
-.video{}
-.auxiliar{}
+.video {}
+.auxiliar {}
 ```
 
 ##### Evite nomeação de classes e IDs com o uso de seletores
 A menos que necessário (por exemplo, com classes auxiliares), não use nomes de elementos em conjunto com IDs ou classes.
+
 ```css
 ID
 
 /*Não Recomendado*/
-Ul#example{}
+Ul#example {}
 
 /*Recomendado*/
-#example{}
+#example {}
 ___________________________________________________________________________________________________________
 CLASS
 
 /*Não Recomendado*/
-.div.error{}
+.div.error {}
 
 /*Recomendado*/
-.error{}
+.error {}
 ```
 
 ##### Faça uso da Taquigrafia (escrita rápida)
 O CSS oferece uma variedade de taquigrafia, propriedade que permite a escrita do código de maneira mais resumida. É interessante a utilização da mesma sempre que possível, mesmo nos casos em que apenas um valor é definido. 
+
 ```css
 /*Não Recomendado*/
     -top border-style: none;
@@ -221,6 +244,7 @@ O CSS oferece uma variedade de taquigrafia, propriedade que permite a escrita do
 
 ##### Notação Hexadecimal
 Use 3 caracteres para notação hexadecimal sempre que possível.
+
 ```css
 /*Não Recomendado*/
     color: #EEBBCC;
@@ -230,7 +254,8 @@ Use 3 caracteres para notação hexadecimal sempre que possível.
 ```
 
 ##### Utilização de ponto e vírgula
-Finalize todas as declarações de propriedades utilizando um *;*
+Finalize todas as declarações de propriedades utilizando um ```;```.
+
 ```css
 /*Não Recomendado*/
 div{
@@ -246,7 +271,8 @@ div{
 ```
 
 ##### Delimitadores de classes e IDs
-Busque ao máximo escrever classes e IDs com nomes simples, mas no caso de palavras compostas utilize hifens (-) para classes e subtraços (_) para IDs.
+Busque ao máximo escrever classes e IDs com nomes simples, mas no caso de palavras compostas utilize hifens ```-``` para classes e subtraços ```_``` para IDs.
+
 ```css
 ID
 
@@ -263,6 +289,7 @@ CLASS
 
 ##### Separação entre propriedades e valores
 Sempre utilize um espaço simples parar separar uma propriedade dos seus valores
+
 ```css
 /*Não Recomendado*/
 p {
@@ -273,8 +300,9 @@ p {
     color: blue;
 }
 ```
+
 ##### Valide o seu estilo
-Sempre que possível verifique se o seu arquivo CSS segue os padrões propostos pela W3C.
+Sempre que possível verifique se o seu arquivo CSS segue os padrões propostos pela [W3C](http://www.w3schools.com/).
 
 #### 2.3 - JavaScript
 O guia de estilo para JavaScript é baseado no [documento](http://javascript.crockford.com/code.html) escrito por Douglas Crockford. Se alguma regra não estiver escrita aqui tome o documento original como base.
@@ -285,9 +313,11 @@ Evite escrever linhas com mais de 120 caracteres. Em alguns casos será necessá
 
 ##### Comentários
 Use comentários se somente necessário. Não comente coisas óbvias como:
+
 ```
  var i = 0; // Atribui à variável i o valor zero.
 ```
+
 Você deve comentar funções utilizando o padrão DocBlock:
 
 ```
@@ -302,24 +332,29 @@ function myFunction(myVariable) {
     return [myVariable];
 }
 ```
+
 ##### Declaração de váriaveis
 Sempre declare variáveis antes de usá-las.
+
 ```
  var name;
  var email;
 ```
+
 ##### Declaração de funções
-Todas as funções devem ser declaradas antes de serem usadas. Não deve haver espaços entre o nome da função e o parêntese de abertura ((), mas deve haver um espaço no fechar de parênteses e abertura de chaves ({).
+Todas as funções devem ser declaradas antes de serem usadas. Não deve haver espaços entre o nome da função e o parêntese de abertura ```()```, mas deve haver um espaço no fechar de parênteses e abertura de chaves ```{```.
+
 ```javascript
 function validate(attribute, options) {
     return true;
 }
 ```
+
 ##### Nomes
 Ao definir variáveis e funções opte por utilizar valores que tenham signicado e que expressem o que será armazenado ou calculado na mesma.
 
 ##### Comandos
-Todos os comandos devem ser terminados por ponto e vírgula (;).
+Todos os comandos devem ser terminados por ponto e vírgula ```;```.
 
 
 ### 3 - EDITORES DE TEXTO
@@ -329,7 +364,7 @@ Um editor de textos Open Source que vem crescendo a uma grande velocidade, alcan
 ##### 3.1.1 - Atalhos do teclado
 O Brackets, assim como outros editores e softwares, tem seus atalhos para agilizar o dia-a-dia de quem trabalha com tais ferramentas. Abaixo alguns atalhos interessantes:
 
-**Crtrl+Shift+A**: Abre um input para você digitar uma tag e teclar “Enter”. Fazendo isso, ele irá inserir a tag completa com seu fechamento e seus atributos no html. Ex.: Digite link e tecle “Enter”, ele vai retornar <link rel=”stylesheet” href=””>. E quando você dá “Enter” o “ponteiro” do mouse vai para dentro das aspas do atributo href. Daí, basta você começar a digitar o endereço que ele vai mostrando as opções em forma de codehint. 
+**Crtrl+Shift+A**: Abre um input para você digitar uma tag e teclar “Enter”. Fazendo isso, ele irá inserir a tag completa com seu fechamento e seus atributos no html. Ex.: Digite link e tecle “Enter”, ele vai retornar ```<link rel=”stylesheet” href=””>```. E quando você dá “Enter” o “ponteiro” do mouse vai para dentro das aspas do atributo href. Daí, basta você começar a digitar o endereço que ele vai mostrando as opções em forma de codehint. 
 
 **Crtrl+Shift+D**: Esse atalho de grande utilidade também está presente no Brackets. Serve para duplicar uma linha.
 
@@ -354,6 +389,7 @@ Um editor de texto simples, limpo, leve e muito customizável.
 O Sublime Text permite que você altere as configurações padrões para realizar certas tarefas. Para alterar as configurações clique em Preferences → Settings – User.
 
 As configurações necessárias para realizar as regras gerais expostas na seção anterior de forma automática estão descritas a seguir:
+
 ```
 {
     "ensure_newline_at_eof_on_save": true,
@@ -362,6 +398,7 @@ As configurações necessárias para realizar as regras gerais expostas na seç�
     "trim_trailing_white_space_on_save": true
 }
 ```
+
 ##### 3.2.1 - Atalhos do teclado
 O Sublime tem muitos comandos escondidos que podem não estar listados nos menus. Você pode acioná-los pelo teclado acionando os comandos pelo controle de acesso *CMD+SHIFT+P*. A seguir alguns deles:
 
@@ -411,14 +448,16 @@ O Package Control é um plug-in que gerencia todos os outros plug-ins do Sublime
 
 **Aligntab**: Esse plug-in serve para a organização de códigos. Ele vai te auxiliar a permanecer com uma Indentação 100% padronizada. É um plug-in de alinhamento usando expressão regular. Confira abaixo suas características:
 
+```
 - Alinha usando expressão regular
 - Espaçamento personalizado, preenchimento e justificado
 - Detecção inteligente para alinhamentos se linhas são selecionadas
 - Suporte a múltiplos cursores
 - Modo de mesa e modo de visualização ao vivo
+```
 
 **Colorshemeselector**: Esse plug-in permite que você crie uma customização no seu Sublime Text. Resumidamente ele serve para selecionar esquema de cores através do Painel. Infelizmente isso só são adotados cores padrões escolhidas pela ferramenta.
 
-**CSS3**: Esse plug-in serve para manter uma boa organização no CSS. Existem casos onde queremos acabar ir logo embora para casa e acabamos esquecendo um simples “;“. O CSS3 Syntax ou apenas CSS3 é bem abrangente, pois se baseia nos mais recentes projetos e especificações atuais. Uso: Navegue até View > Syntax > CSS3. 
+**CSS3**: Esse plug-in serve para manter uma boa organização no CSS. Existem casos onde queremos acabar ir logo embora para casa e acabamos esquecendo um simples ```;```. O CSS3 Syntax ou apenas CSS3 é bem abrangente, pois se baseia nos mais recentes projetos e especificações atuais. Uso: Navegue até View > Syntax > CSS3. 
 
 **Javascriptnext**: Este é um pacote de sintaxe melhorada para Java Script. Baseia-se nos arquivos de linguagem comumente usados ​​e também inclui novos recursos de ECMAScript 6 como módulos, métodos, arrows functions, classes, geradores e assessores (ES5). Se você quiser usá-lo para cada arquivo js, você ​​cria ou abra um arquivo Java Script, e daí clica no nome de sintaxe no canto inferior direito do Sublime, em seguida, clique em “Abrir todos com extensão atual e depois selecione JavascriptNext – ES6 > JavascriptNext.
