@@ -85,6 +85,7 @@ Utilize os comentários para explicar o código, conforme necessário, sempre qu
 
 ### 2 - REGRAS DE ESTILO
 #### 2.1 - HTML
+As regra de estilo estabelicidas para HTML baseados no [guia de estilo para HTML](https://google.github.io/styleguide/htmlcssguide.xml#HTML_Style_Rules) da Google.
 ##### Tipo de Documento
 Use HTML5. O HTML5 é o preferido para todos os documentos HTML. Recomenda-se utilizar o HTML como text/html. Não use XHTML. XHTML, como application/xhtml+xml, pois carece de suporte ao navegador e infraestrutura, além de oferecer menos espaço para sua otimização. 
 Ao definir o tipo de documento utilize a tag que expresse que a versão utilizada será o HTML5.
@@ -132,6 +133,7 @@ Use aspas duplas para os atributos html.
 Sempre que possível verifique se sua página HTML segue os padrões estabelecidos pelo [W3C](http://www.w3schools.com/).
 
 ####2.2 - CSS
+As regra de estilo estabelicidas para CSS baseados no [guia de estilo para CSS](https://google.github.io/styleguide/htmlcssguide.xml#CSS_Style_Rules) da Google.
 ##### Escrita
 Utilize sempre letras minúsculas para representar tags, propriedades e valores quando possível.
 
@@ -353,6 +355,43 @@ Ao definir variáveis e funções opte por utilizar valores que tenham signicado
 ##### Comandos
 Todos os comandos devem ser terminados por ponto e vírgula ```;```.
 
+#### 2.3 - PHP
+Este guia utiliza as [recomendações](http://framework.zend.com/manual/1.10/en/coding-standard.html) definidas pela Zend Technologies para descrever o estilo a ser utilizado ao se escrever PHP.
+##### Regras Gerais
+Para arquivos que possuim apenas código PHP é proibido o uso de tags de encerramento (?>). Isso evita a injeção de espaçoes desnecessários.
+
+Obs.: Nos exemplos de código escritos aqui a tag de fechamento do PHP está sendo utilizada porque este arquivo não é apenas PHP.
+
+##### Largura da linha
+Assim como JavaScript, o número máximo de caracteres por linha é de 120.
+
+##### Nomes de arquivos
+Todos os arquivos que possuem código PHP devem possuir a extensão .php no final, com a exceção apenas dos scripts de visão que devem terminar com a extensão .phtml.
+
+##### Nomes de classes
+Classes devem possuir o namespace com o nome da pasta onde estão hospedados imediatamente após a pasta App. Por exemplo, para a classe User, hospedada em App/Models/User.php o arquivo PHP deve conter:
+
+```PHP
+<?php
+namespace Models;
+class User {
+}
+?>
+```
+
+##### Funções e Métodos
+Nomes de funções sempre começam com letra minúscula e seguem o "camelCase".
+
+```PHP
+<?php
+function validateName() {}
+function validateEmail() {}
+function createUser() {}
+?>
+```
+
+##### Variáveis
+Devem possuir apenas caracteres alfanuméricos. Underscores (_) não são permitidos.
 
 ### 3 - EDITORES DE TEXTO
 A seguir alguns editores de textos que podem ser utilizados no desenvolvimento dos projetos.
