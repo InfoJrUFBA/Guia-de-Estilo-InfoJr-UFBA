@@ -1,5 +1,9 @@
 #Guia de estilização de código da InfoJr UFBA
 
+### Motivação
+O guia abaixo é um documento em construção que tem como finalidade padronizar o desenvolvimento de códigos nas linguagens de programação e estilização dos projetos, e que facilite o acesso e compreensão dos mesmos pelos seus membros.
+
+
 1. [REGRAS GERAIS](#1---regras-gerais)
 
 2. [REGRAS DE ESTILO](#2---regras-de-estilo)
@@ -18,9 +22,6 @@
 
  3.2 [SUBLIME](#32---sublime)
 
-
-### Motivação
-O guia abaixo é um documento em construção que tem como finalidade padronizar o desenvolvimento de códigos nas linguagens de programação e estilização dos projetos, e que facilite o acesso e compreensão dos mesmos pelos seus membros.
 
 ### 1 - REGRAS GERAIS
 As regras descritas nesta seção devem ser aplicadas para qualquer arquivo independente da linguagem a ser utilizada.
