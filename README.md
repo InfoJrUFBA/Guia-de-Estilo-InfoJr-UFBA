@@ -1,5 +1,24 @@
 #Guia de estilização de código da InfoJr UFBA
 
+1. [REGRAS GERAIS](#1---regras-gerais)
+
+2. [REGRAS DE ESTILO](#2---regras-de-estilo)
+
+ 2.1 [HTML](#21---html)
+
+ 2.2 [CSS](#22---css)
+
+ 2.3 [JAVA SCRIPT](#23---javascript)
+
+ 2.4 [PHP](#24---php)
+ 
+3. [EDITORES DE TEXTO](#3---editores-de-texto)
+
+ 3.1 [BRACKETS](#31---brackets)
+
+ 3.2 [SUBLIME](#32---sublime)
+
+
 ### Motivação
 O guia abaixo é um documento em construção que tem como finalidade padronizar o desenvolvimento de códigos nas linguagens de programação e estilização dos projetos, e que facilite o acesso e compreensão dos mesmos pelos seus membros.
 
@@ -355,7 +374,7 @@ Ao definir variáveis e funções opte por utilizar valores que tenham signicado
 ##### Comandos
 Todos os comandos devem ser terminados por ponto e vírgula ```;```.
 
-#### 2.3 - PHP
+#### 2.4 - PHP
 Este guia utiliza as [recomendações](http://framework.zend.com/manual/1.10/en/coding-standard.html) definidas pela Zend Technologies para descrever o estilo a ser utilizado ao se escrever PHP.
 ##### Regras Gerais
 Para arquivos que possuim apenas código PHP é proibido o uso de tags de encerramento (?>). Isso evita a injeção de espaçoes desnecessários.
