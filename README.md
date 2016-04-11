@@ -105,7 +105,7 @@ Utilize os comentários para explicar o código, conforme necessário, sempre qu
 
 ### 2 - REGRAS DE ESTILO
 #### 2.1 - HTML
-As regra de estilo estabelicidas para HTML baseados no [guia de estilo para HTML](https://google.github.io/styleguide/htmlcssguide.xml#HTML_Style_Rules) da Google.
+As regras de estilo estabelicidas para HTML baseados no [guia de estilo para HTML](https://google.github.io/styleguide/htmlcssguide.xml#HTML_Style_Rules) da Google.
 ##### Tipo de Documento
 Use HTML5. O HTML5 é o preferido para todos os documentos HTML. Recomenda-se utilizar o HTML como text/html. Não use XHTML. XHTML, como application/xhtml+xml, pois carece de suporte ao navegador e infraestrutura, além de oferecer menos espaço para sua otimização. 
 Ao definir o tipo de documento utilize a tag que expresse que a versão utilizada será o HTML5.
@@ -378,7 +378,7 @@ Todos os comandos devem ser terminados por ponto e vírgula ```;```.
 #### 2.4 - PHP
 Este guia utiliza as [recomendações](http://framework.zend.com/manual/1.10/en/coding-standard.html) definidas pela Zend Technologies para descrever o estilo a ser utilizado ao se escrever PHP.
 ##### Regras Gerais
-Para arquivos que possuim apenas código PHP é proibido o uso de tags de encerramento (?>). Isso evita a injeção de espaçoes desnecessários.
+Para arquivos que possuem apenas código PHP é proibido o uso de tags de encerramento (?>). Isso evita a injeção de espaços desnecessários.
 
 Obs.: Nos exemplos de código escritos aqui a tag de fechamento do PHP está sendo utilizada porque este arquivo não é apenas PHP.
 
@@ -393,9 +393,9 @@ Classes devem possuir o namespace com o nome da pasta onde estão hospedados ime
 
 ```PHP
 <?php
-namespace Models;
-class User {
-}
+    namespace Models;
+    class User {
+    }
 ?>
 ```
 
