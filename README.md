@@ -6,6 +6,20 @@ O guia abaixo é um documento em construção que tem como finalidade padronizar
 
 1. [REGRAS GERAIS](#1---regras-gerais)
 
+ 1.1 [Protocolo para Recursos Externos](#11---protocolo-para-recursos-externos)
+
+ 1.2 [Idioma](#12---idioma)
+
+ 1.3 [Última Linha](#13---Última-linha)
+
+ 1.4 [Identação](#14---identação)
+ 
+ 1.5 [Espaços](#15---espaços)
+ 
+ 1.6 [Codificação de Caracteres](#16---codificação-de-caracteres)
+ 
+ 1.7 [Comentários](#17---comentários)
+
 2. [REGRAS DE ESTILO](#2---regras-de-estilo)
 
  2.1 [HTML](#21---html)
@@ -26,7 +40,7 @@ O guia abaixo é um documento em construção que tem como finalidade padronizar
 ### 1 - REGRAS GERAIS
 As regras descritas nesta seção devem ser aplicadas para qualquer arquivo independente da linguagem a ser utilizada.
 
-#### 1.1 - Protocolo para recursos externos
+#### 1.1 - Protocolo para Recursos Externos
 Omitir a parte de protocolo ```(http:, https:)``` de URLs
 
 ```html 
