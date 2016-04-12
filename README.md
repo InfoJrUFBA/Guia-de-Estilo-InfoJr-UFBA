@@ -394,8 +394,7 @@ Classes devem possuir o namespace com o nome da pasta onde estão hospedados ime
 ```PHP
 <?php
     namespace Models;
-    class User {
-    }
+    class User {}
 ?>
 ```
 
@@ -404,9 +403,9 @@ Nomes de funções sempre começam com letra minúscula e seguem o "camelCase".
 
 ```PHP
 <?php
-function validateName() {}
-function validateEmail() {}
-function createUser() {}
+    function validateName() {}
+    function validateEmail() {}
+    function createUser() {}
 ?>
 ```
 
