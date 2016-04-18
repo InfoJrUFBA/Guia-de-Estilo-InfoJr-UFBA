@@ -118,7 +118,7 @@ Utilize os comentários para explicar o código, conforme necessário, sempre qu
 ```
 
 ### 2 - REGRAS DE ESTILO
-#### 2.1 - HTML
+#### 2.1 - Html
 As regras de estilo estabelicidas para HTML baseados no [guia de estilo para HTML](https://google.github.io/styleguide/htmlcssguide.xml#HTML_Style_Rules) da Google.
 ##### Tipo de Documento
 Use HTML5. O HTML5 é o preferido para todos os documentos HTML. Recomenda-se utilizar o HTML como text/html. Não use XHTML. XHTML, como application/xhtml+xml, pois carece de suporte ao navegador e infraestrutura, além de oferecer menos espaço para sua otimização. 
