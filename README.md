@@ -390,7 +390,7 @@ Ao definir variáveis e funções opte por utilizar valores que tenham signicado
 Todos os comandos devem ser terminados por ponto e vírgula ```;```.
 
 #### 2.4 - PHP
-Este guia utiliza as [recomendações](http://framework.zend.com/manual/1.10/en/coding-standard.html) definidas pela Zend Technologies para descrever o estilo a ser utilizado ao se escrever PHP.
+Este guia utiliza as [recomendações](http://framework.zend.com/manual/1.10/en/coding-standard.html) definidas pela Zend Technologies para descrever o estilo a ser utilizado ao se escrever PHP. E orientações [defindas](http://www.devmedia.com.br/) pelo DevMedia para induzir conhecimentos sobre Orientação a Objetos e PDO no PHP.
 ##### Regras Gerais
 Para arquivos que possuem apenas código PHP é proibido o uso de tags de encerramento (?>). Isso evita a injeção de espaços desnecessários.
 
@@ -425,6 +425,299 @@ Nomes de funções sempre começam com letra minúscula e seguem o "camelCase".
 
 ##### Variáveis
 Devem possuir apenas caracteres alfanuméricos. Underscores (_) não são permitidos.
+
+##### 2.4.1 Orientação a Objetos
+A orientação a objetos (OO) é um padrão de programação em que um software não é composto por um grande bloco de códigos específicos, e sim de vários blocos de códigos distantes e independentes, que juntos montam um sistema. O PHP faz parte de um grupo de linguagens que possuem suporte a OO, mas não é preso a ela. Esse padrão não possui um objetivo único e tem como objetivo:
+
+- Reutilização de código (tempo economizado);
+- Escalabilidade (código adicionado mais facilmente);
+- Manutenbilidade (manutenção mais fácil);
+- Desenvolvimento mais rápido.
+
+A POO possui alguns conceitos fundamentais para seu desenvolvimento:
+
+- Abstração: são tipos abstratos de dados;
+- Objetos: um objeto é uma entidade do mundo real, concreta ou abstrata, que seja aplicável ao sistema;
+- Classes: uma classe é a representação de vários objetos que possuem as mesmas características e comportamentos;
+- Atributos / Propriedades: são as características de um determinado objeto.
+
+##### Classes e Objetos
+Algo que confunde bastante novos estudantes de Orientação a Objetos é a diferença entre Classes e Objetos. 
+As classes definem as características e o comportamento dos seus objetos. Cada característica é representada por um atributo e cada comportamento é definido por um método, logo uma classe não é um objeto e sim uma abstração de sua estrutura, no qual podemos definir quantos objetos desejamos ter.
+Para podermos entender melhor o funcionamento, vamos criar a nossa primeira classe e alguns objetos a partir dela, conforme o exemplo a seguir:
+```PHP
+ <?php
+ Class Conta {
+ }
+     $conta  = new Conta();
+     $conta2 = new Conta();
+     $conta3 = new Conta();
+ ?>
+```
+Criamos uma classe vazia de uma conta junto com três objetos que são dessa conta criada. Podemos dizer então que os três objetos são do tipo conta. E é dessa maneira que funciona todo objeto, seu tipo será sempre a classe a partir do qual ele é criado.
+
+##### Atributos e Métodos
+Uma classe é composta por atributos e métodos, que juntos dão funcionalidade a um objeto. Podemos ver no próximo exemplo, uma classe composta por dois atributos e três métodos.
+```PHP
+<?php 
+  Class Conta { 
+    public $saldo = 500; 
+    public $titular; 
+    
+    function sacar($valor) { 
+    } 
+    
+    function depositar($valor) { 
+    } 
+    
+    function verSaldo() { 
+    } 
+  } 
+    $conta1 = new Conta(); 
+    $conta1 ->depositar(500); 
+    $conta1->sacar(20); 
+  
+    $conta2 = new Conta(); 
+    $conta2->depositar(250); 
+    $conta2->verSaldo(); ?>
+?>
+```
+A classe Conta tem como atributos o saldo da conta e o titular. E como métodos possui depositar(), sacar() e verSaldo(). Para acessarmos o método depositar() do nosso objeto $conta1 precisamos utilizar uma seta(->). Seu nome é Operador de Acesso a Objetos e é através dessa seta que indicamos que estamos acessando um atributo ou método de tal objeto. Faremos agora uma codificação mais completa em cima de nossa classe Conta, como podemos observar no exemplo a segur:
+```PHP
+<?php 
+  Class Conta{ 
+    public $saldo = 0; 
+    public $titular; 
+    
+    function depositar($valor) { 
+        $this->depositar += $valor; 
+    } 
+    
+    function sacar($valor) { 
+        if(($this->saldo > 0) && ($this->saldo >= $valor)) { 
+            $this->saldo -= $valor; 
+        }else { 
+            echo "Saldo insuficiente"; 
+         } 
+      } 
+      
+    function verSaldo() { 
+        echo "Saldo Atual:".$this->saldo. "<br>"; 
+    } 
+  } 
+  
+  $novaConta = new Conta(); 
+  $novaConta->verSaldo(); 
+  $novaConta->depositar(500); 
+  $novaConta->verSaldo(); 
+  $novaConta->sacar(150);
+  $novaConta->verSaldo(); ?>
+?>
+```
+Note que para acessarmos nossos atributos dentro dos métodos utilizamos a variável reservada $this. Se fosse preciso chamar algum método da própria classe dentro de um outro método teríamos de usar $this, que é usado para acessar atributos e métodos da própria classe e só existe dentro deste escopo. No PHP ele é fundamental e obrigatório, já em algumas outras linguagens de programação $this é opcional.
+
+##### Herança
+Um dos conceitos fundamentais da OO é a herança de classes, pois permite que uma classe estenda outra e a classe filha vai herdar todos os atributos e métodos da classe pai. Ela pode então tanto possuir novos métodos e atributos, quanto reescrever métodos já existentes, como mostra o próximo exemplo:
+```PHP
+<?php 
+    class Conta{ 
+        public $saldo = 0; 
+        function depositar($valor) { 
+        } 
+        
+        function sacar() {
+        } 
+        
+        class ContaCorrente extends Conta { 
+            function transferir($contaDestino, $valor) {
+                $this->saldo -= $valor; 
+            } 
+        }
+    } 
+ 
+     $novaConta = new ContaCorrente(); 
+     $novaConta->transferir('xxx-xxx', 500); 
+     echo "Saldo:".$novaConta->saldo; 
+ ?>
+```
+
+##### Classes abstratas
+Uma classe abstrata é uma classe que não pode ser instanciada como um objeto diretamente. Ela tem que ser estendida por alguma classe concreta, e quando um objeto desta classe for criado, ele herdará métodos e atributos da classe abstrata. Veja o próximo exemplo:
+```PHP
+<?php abstract 
+ class Conta{ 
+     public $saldo =0; 
+     public function sacar() { 
+     } 
+     
+     public function depositar($valor) { 
+     }
+     
+     class ContaPoupanca extends Conta{ 
+         public function resgatar($valor) {
+         } 
+     } 
+     
+     $conta1 = new ContaPoupanca(); 
+     $conta1->depositar(500); 
+     $conta1->resgatar(250); ?>
+?>
+Note que a classe estendida faz uso dos métodos declarados na classe abstrata, ou seja, em classes abstratas e concretas o conceito de herança é o mesmo. Mas, para que serve uma classe abstrata? Vamos pensar no funcionamento de um banco, onde os clientes podem ter uma conta corrente e poupança: o funcionamento de uma conta segue um determinado padrão, o que difere uma da outra são as ações (métodos) que podemos executar.
+```
+##### Métodos Abstratos
+odemos ter também métodos abstratos em nossas classes, como mostra o próximo exemplo:
+```PHP
+ <?php 
+  abstract class Conta { 
+      public $saldo = 0; 
+      public function sacar() { 
+      } 
+      
+      public function depositar($valor) { 
+      } 
+  } 
+  class ContaPoupanca extends Conta { 
+      public function resgatar($valor) { 
+      } 
+  } 
+  $conta1 = new ContaPoupanca(); 
+  $conta1->depositar(500); 
+  $conta1->resgatar(250); ?>
+?>
+```
+Todo método abstrato precisa, obrigatoriamente, ser implementado na classe filha, ou seja, todas as contas, independentemente do tipo devem possuir as operações básicas de saque, depósito, transferência e consulta. Porém, contas de tipos diferentes podem tratar estas ações de formas diferentes. Por exemplo: um depósito em uma conta poupança gera um certo rendimento ao saldo aplicado - para este caso um método abstrato é uma forma de garantir que este método seja implementado na classe ContaPoupança e em todas as outras classes que estende–lás.
+
+##### Classes Finais
+Uma classe final é uma classe que não pode ser estendida por nenhuma outra classe, ou seja, a classe final não tem herdeiros, pois ela é a última de sua hierarquia. Em nosso exemplo temos uma conta do tipo poupança que, pela regra de negócio de um banco, não possui uma derivação, ou seja, não deve ser estendida. Para estes casos definimos a classe como final, ou seja, somente existirão objetos da classe poupança e não filhos da mesma, pois o correto é que todas as contas estendam a nossa classe pai Conta e mais nenhuma outra, como mostra o próximo exemplo:
+```PHP
+<?php 
+final class ContaPoupanca { 
+     public function resgatar($valor){ 
+     } 
+     public function verSaldo(){ 
+     } 
+ } 
+ $poupanca = new ContaPoupanca(); 
+ $poupanca->resgatar(250); 
+?>
+```
+##### Métodos Finais
+Também podemos ter métodos finais que jamais podem ser reescritos nas classes filhas. Em nosso exemplo de agência bancária, podemos concluir que o método sacar de uma Conta é padrão para todas as Contas, independentemente de seu tipo. Quando temos uma situação como esta podemos definir estes métodos como final, impedindo assim que eles sejam reescritos e saiam do padrão estabelecido na classe pai, como mostra o exemplo a seguir:
+```PHP
+<?php 
+ class Conta { 
+     public function depositar($valor){ 
+     } 
+     
+     final public function sacar($valor){ #método final, não pode ser reescrito 
+     } 
+ } 
+ class ContaCorrente extends Conta{ public function depositar(){ 
+      public function depositar(){
+      } 
+ } 
+?>
+```
+##### Traits
+Traits, a partir do PHP 5.4, nos proporcionam uma maneira simples e objetiva de reaproveitamento de código, pois são como classes onde usamos a palavra reservada trait, então escrevemos os métodos que queremos. E para usarmos um trait em uma classe usamos a palavra USE, como podemos observar no próximop exemplo:
+```PHP
+<?php 
+ class Conta { 
+     public $saldo = 0; 
+     public function getSaldo() {
+         echo "Saldo Atual: {$this->saldo}"; 
+     } 
+ } 
+ trait Acoes { 
+     public function getSaldo(){ 
+         echo "Saldo Disponivel: {$this->saldo}"; 
+     } 
+     
+     public function depositar($valor){ 
+         $this->saldo += $valor; 
+     } 
+     
+     public function sacar($valor){ 
+         if($this->saldo >= $valor) { 
+             $this->saldo -= $valor; 
+         } 
+     } 
+ } 
+ 
+ class ContaCorrente extends Conta { 
+     use Acoes; 
+ } 
+ $o = new ContaCorrente(); 
+     $o->depositar(500); 
+     $o->sacar(200); 
+     $o->getSaldo(); 
+     // Saldo Disponivel: 300 
+ ?>
+ ```
+Note que o método getSaldo() foi reescrito dentro do Trait, ou seja, irá sobrescrever os métodos da classe base (pai). Podemos ainda usar múltiplos traits em nossas classes, como no próximo exemplo.
+```PHP
+<?php 
+ class Conta { 
+     public $saldo = 0; 
+     public function getSaldo() { 
+         echo "Saldo Atual: {$this->saldo}"; 
+     } 
+ } 
+ trait Acoes { 
+     public function depositar($valor) { 
+         $this->saldo += $valor; 
+     } 
+     public function sacar($valor) { 
+         if($this->saldo >= $valor) {
+             $this->saldo -= $valor; 
+         } 
+     } 
+ } 
+ trait consultaExtrato { 
+     public function getSaldo() { 
+         echo "Saldo Disponivel para saque:{$this->saldo}<br>"; 
+     } 
+     public function gerarExtrato($periodo) { 
+         echo "Gerando extrato período $periodo aguarde..."; 
+     } 
+ } 
+ class ContaCorrente extends Conta { 
+     use Acoes, consultaExtrato; 
+ } 
+ $o = new ContaCorrente(); 
+ $o->depositar(500); 
+ $o->sacar(200); 
+ $o->getSaldo(); 
+ $o->gerarExtrato('20/01/2013'); 
+?>
+```
+Desta vez temos dois traits com nomes diferentes, e note que sobrescrevemos o método getSaldo() novamente no trait consultaExtrato.
+
+#### 2.4.2 PHP Data Objects(PDO)
+O PDO veio para solucionar a migração de um banco de dados para outro, do MySQL para o PostgreSQL, por exemplo. O PDO é uma camada de abstração de acesso a dados, onde os métodos de manipulação de dados são independentes do SGDB que você está utilizando, ou seja, podemos usar as mesmas funções para executar queries e consultar dados.
+O PDO veio no PHP 5.1 e dá suporte a vários sistemas gerenciadores de banco de dados, como MySQL, PostgreSQL, SQlite, Informix, Oracle, SQL Server, IBM e etc.
+A conexão com um banco de dados através do PDO se dá durante a criação de um objeto da classe PDO, passando informações de conexão com o banco na forma de um DSN (Data Source Name), além das credencias de acesso, como mostra o próximo exemplo.
+```PHP
+<?php 
+ // MySQL $db = new PDO("mysql:host=localhost;dbname=banco", "root", "senha"); 
+ 
+ // PostgreSQL 
+ 
+ $db = new PDO("pgsql:host=localhost;dbname=banco", "root", "senha"); 
+ 
+ // SQLite 
+ 
+ $db = new PDO("sqlite:banco.sqlite"); 
+?>
+```
+Veja que criamos a $db que guarda um objeto da classe PDO e entre parênteses passamos o host, nome do banco, usuário e senha. Uma vez que o objeto da classe PDO tenha sido instanciado, conectamos em nosso banco. Para desconectar, basta "matarmos" o objeto ou aguardar que ele seja morto automaticamente ao final de nosso script, como podemos ver a seguir:
+```PHP
+<?php 
+ $db = new PDO("mysql:host=localhost;dbname=banco", "root", ""); 
+ unset($db); 
+?>
+```
+Veja que utilizamos o unset para encerrar a conexão.
 
 ### 3 - EDITORES DE TEXTO
 A seguir alguns editores de textos que podem ser utilizados no desenvolvimento dos projetos.
