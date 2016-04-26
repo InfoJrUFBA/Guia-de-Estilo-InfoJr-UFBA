@@ -51,6 +51,14 @@ O guia abaixo é um documento em construção que tem como finalidade padronizar
    
  2.4.2 [PHP Data Objects(PDO)](#242-php-data-objectspdo)
  
+    - [Executando comandos](#executando-comandos)
+    
+    - [Fazendo consultas](#fazendo-consultas)
+    
+    - [Transações](#transações)
+    
+    - [Prepared Statements](#prepared-statements)
+ 
 3. [EDITORES DE TEXTO](#3---editores-de-texto)
 
  3.1 [BRACKETS](#31---brackets)
@@ -805,7 +813,29 @@ As transações evitam esse tipo de problema através do método beginTransactio
     // Caso não deu certo $db->rollback();
 ```
 ##### Prepared Statements
-##### 
+Statements são comandos SQL pré-construídos e garantem que nenhuma query que foi preparada sofra um ataque SQL injection, ou seja, um ataque baseado na manipulação do código SQL pela inserção de informações em uma query.
+
+Imagine a inserção de vários dados em uma tabela. As únicas coisas que mudam são as informações de cada registro, a tabela e as colunas não mudam. Um statement então cria um INSERT onde vai inserir em tabela e colunas pré-determinadas, já que apenas as informações mudarão.
+
+O PDO possui um método chamado prepare que, ao utilizá-lo, o comando não será executado, apenas preparado para ser executado depois. O método prepare retorna um objeto da classe PDOStatement para que, quando utilizamos esse método, precisamos criar placeholders que serão substituídos pelos valores que queremos que estejam naquela query. Veja o próximo exemplo.
+```PHP
+<?php
+    $db = new PDO("mysql:host=localhost;dbname=banco", "root", "");
+   
+    $statement = $db->prepare("INSERT INTO posts (titulo, conteudo) VALUES
+     (?, ?)");
+```
+Note que as interrogações são nossos placeholders, que serão substituídos por variáveis. Para executarmos as statements usamos o método execute, passando como parâmetro um array de variáveis que substituirão os placeholders, como mostra o exemplo a seguir.
+```PHP
+<?php 
+    $db = new PDO("mysql:host=localhost;dbname=banco", "root", ""); 
+    $statement = $db->prepare("INSERT INTO posts (titulo, conteudo) VALUES (?, ?)"); 
+    $statement->execute(array("Arroz", "Meu primeiro item!")); 
+    $statement->execute(array("Feijão", "Meu segundo item!")); 
+    $statement->execute(array("Tomate", "Meu terceito item!"));
+```
+Note que temos apenas uma query, mas iremos executar três vezes com três valores diferentes. Estamos passando um array de informações para o método execute, que pegará essas informações e colocará no lugar das interrogações, ou seja, os placeholders.
+
 ### 3 - EDITORES DE TEXTO
 A seguir alguns editores de textos que podem ser utilizados no desenvolvimento dos projetos.
 #### 3.1 - Brackets
