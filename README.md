@@ -30,6 +30,27 @@ O guia abaixo é um documento em construção que tem como finalidade padronizar
 
  2.4 [PHP](#24---php)
  
+ 2.4.1 [Orientação a Objetos](#241-orientação-a-objetos)
+   
+    - [Classes e Objetos](#classes-e-objetos)
+   
+    - [Atriibutos e Métodos](#atributos-e-métodos)
+   
+    - [Herança](#herança)
+   
+    - [Classes Abstratas](classes-abstratas)
+   
+    - [Métodos Abstratos](métodos-abstratos)
+   
+    - [Classes Finais](#classes-finais)
+   
+    - [Métodos Finais](#métodos-finais)
+   
+    - [Traits](#traits)
+   
+   
+ 2.4.2 [PHP Data Objects(PDO)](#242-php-data-objectspdo)
+ 
 3. [EDITORES DE TEXTO](#3---editores-de-texto)
 
  3.1 [BRACKETS](#31---brackets)
@@ -719,6 +740,72 @@ Veja que criamos a $db que guarda um objeto da classe PDO e entre parênteses pa
 ```
 Veja que utilizamos o unset para encerrar a conexão.
 
+##### Executando Comandos
+Depois de conectados temos a nossa disposição uma série de métodos para lidar com o banco. Utilizando a linguagem SQL, vamos fazer o uso do método exec, de acordo com o código do próximo exemplo.
+```PHP
+<?php  
+  $db = new PDO("mysql:host=localhost;dbname=banco", "root", "");
+   
+  $db->exec("CREATE TABLE clientes(id INT AUTO_INCREMENT, nome VARCHAR(255), email VARCHAR(255)) ");
+  ?>
+```
+Veja que acessamos o método exec através de nossa conexão com o “->” e criamos uma tabela chamada clientes com os campos id, nome e email.
+
+##### Fazendo Consultas
+Para fazer consultas usamos o método query, que executa um comando SQL e traz para nós linhas de um banco de dados. Veja o próximo exemplo.
+```PHP
+<?php 
+     $db = new PDO("mysql:host=localhost;dbname=banco", "root", ""); 
+  
+     $dados = $db->query("SELECT * FROM clientes"); 
+?>
+```
+Veja que dentro da $dados é executada uma query que traz todos os dados da tabela clientes. Podemos ainda acessar nossos dados através dos métodos fetch e fetchAll.
+O método fetch retorna apenas um resultado para nós, enquanto o fetchAll irá retornar todos os resultados. Estes métodos retornam tanto um array quando um objeto, dependendo dos parâmetros especificados, como exemplo a seguir.
+```PHP
+<?php 
+    $db = new PDO("mysql:host=localhost;dbname=banco", "root",""); 
+    $dados = $db->query("SELECT * FROM clientes"); 
+    $todos = $dados->fetchAll(); 
+    $um = $dados->fetch(); 
+    
+    print_r($todos); 
+    print_r($um); 
+?>
+```
+Note que, por padrão, os métodos retornam índices associativos e numéricos. Podemos fazer com que somente índices associativos sejam mostrados ou apenas numéricos, como mostra o código a seguir
+```PHP
+<?php $db = new PDO("mysql:host=localhost;dbname=banco", "root",""); 
+    $dados = $db->query("SELECT * FROM clientes"); 
+    $assoc = $dados->fetchAll(PDO::FETCH_ASSOC); 
+    $num = $dados->fetchAll(PDO::FETCH_NUM); 
+    
+    print_r($assoc); 
+    print_r($num); 
+?>
+```
+Veja que na $assoc queremos que seja retornado resultados em índices associativos, enquanto que na $num retorna apenas índices numéricos.
+
+##### Transações
+Transações são uma sequência de operações feitas em um sistema gerenciador de banco de dados. As transações têm o objetivo de proporcionar uma maneira de recuperar informações a partir de um desastre. Uma transação de banco de dados deve possuir atomicidade, consistência, isolamento e durabilidade (ACID).
+
+Imagine um sistema onde temos que inserir dados em tabelas de estoque, pedido, cliente e logística. O cliente pagou e tudo foi inserido aparentemente bem no sistema, mas não foi inserido o pedido de entrega na tabela de logística. Temos um problema agora, certo?!
+
+As transações evitam esse tipo de problema através do método beginTransaction do PDO. Após chamarmos o método, todos os comandos feitos não serão automaticamente executados. O PDO irá esperar pelo método commit para efetivar os comandos no banco de dados, ou pelo comando rollback para anular os comandos e desfazer tudo que foi feito. Veja o próximo exemplo.
+```PHP
+<?php 
+    $db = new PDO("mysql:host=localhost;dbname=banco", "root", ""); 
+    $db->beginTransaction(); 
+    $db->exec("UPDATE pedidos SET compra = 5641"); 
+    $db->exec("UPDATE clientes SET compra = 5641 "); 
+    $db->exec("INSERT INTO logística(compra) VALUES (5641)"); 
+    // Caso tudo tenha dado certo 
+    $db->commit(); 
+    
+    // Caso não deu certo $db->rollback();
+```
+##### Prepared Statements
+##### 
 ### 3 - EDITORES DE TEXTO
 A seguir alguns editores de textos que podem ser utilizados no desenvolvimento dos projetos.
 #### 3.1 - Brackets
