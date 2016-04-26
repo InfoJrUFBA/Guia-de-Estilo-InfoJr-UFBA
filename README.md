@@ -390,7 +390,7 @@ Ao definir variáveis e funções opte por utilizar valores que tenham signicado
 Todos os comandos devem ser terminados por ponto e vírgula ```;```.
 
 #### 2.4 - PHP
-Este guia utiliza as [recomendações](http://framework.zend.com/manual/1.10/en/coding-standard.html) definidas pela Zend Technologies para descrever o estilo a ser utilizado ao se escrever PHP. E orientações [defindas](http://www.devmedia.com.br/) pelo DevMedia para induzir conhecimentos sobre Orientação a Objetos e PDO no PHP.
+Este guia utiliza as [recomendações](http://framework.zend.com/manual/1.10/en/coding-standard.html) definidas pela Zend Technologies para descrever o estilo a ser utilizado ao se escrever PHP. E [orientações](http://www.devmedia.com.br/) defindas pelo DevMedia para induzir conhecimentos sobre Orientação a Objetos e PDO no PHP.
 ##### Regras Gerais
 Para arquivos que possuem apenas código PHP é proibido o uso de tags de encerramento (?>). Isso evita a injeção de espaços desnecessários.
 
