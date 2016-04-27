@@ -476,8 +476,9 @@ As classes definem as características e o comportamento dos seus objetos. Cada 
 Para podermos entender melhor o funcionamento, vamos criar a nossa primeira classe e alguns objetos a partir dela, conforme o exemplo a seguir:
 ```PHP
  <?php
- Class Conta {
- }
+     Class Conta {
+     }
+     
      $conta  = new Conta();
      $conta2 = new Conta();
      $conta3 = new Conta();
@@ -489,58 +490,60 @@ Criamos uma classe vazia de uma conta junto com três objetos que são dessa con
 Uma classe é composta por atributos e métodos, que juntos dão funcionalidade a um objeto. Podemos ver no próximo exemplo, uma classe composta por dois atributos e três métodos.
 ```PHP
 <?php 
-  Class Conta { 
-    public $saldo = 500; 
-    public $titular; 
+    Class Conta { 
+        public $saldo = 500; 
+        public $titular; 
     
-    function sacar($valor) { 
-    } 
+        function sacar($valor) {
+        } 
     
-    function depositar($valor) { 
-    } 
+        function depositar($valor) { 
+        } 
     
-    function verSaldo() { 
-    } 
-  } 
+        function verSaldo() { 
+        } 
+    }
+    
     $conta1 = new Conta(); 
     $conta1 ->depositar(500); 
     $conta1->sacar(20); 
   
     $conta2 = new Conta(); 
     $conta2->depositar(250); 
-    $conta2->verSaldo(); ?>
+    $conta2->verSaldo();
 ?>
 ```
 A classe Conta tem como atributos o saldo da conta e o titular. E como métodos possui depositar(), sacar() e verSaldo(). Para acessarmos o método depositar() do nosso objeto $conta1 precisamos utilizar uma seta(->). Seu nome é Operador de Acesso a Objetos e é através dessa seta que indicamos que estamos acessando um atributo ou método de tal objeto. Faremos agora uma codificação mais completa em cima de nossa classe Conta, como podemos observar no exemplo a segur:
 ```PHP
 <?php 
-  Class Conta{ 
-    public $saldo = 0; 
-    public $titular; 
+    Class Conta{ 
+        public $saldo = 0; 
+        public $titular; 
     
-    function depositar($valor) { 
-        $this->depositar += $valor; 
-    } 
+        function depositar($valor) { 
+            $this->depositar += $valor; 
+        } 
     
-    function sacar($valor) { 
-        if(($this->saldo > 0) && ($this->saldo >= $valor)) { 
-            $this->saldo -= $valor; 
-        }else { 
-            echo "Saldo insuficiente"; 
-         } 
-      } 
+        function sacar($valor) { 
+            if(($this->saldo > 0) && ($this->saldo >= $valor)) { 
+                $this->saldo -= $valor; 
+            }
+            else { 
+                echo "Saldo insuficiente"; 
+            } 
+        } 
       
-    function verSaldo() { 
-        echo "Saldo Atual:".$this->saldo. "<br>"; 
+        function verSaldo() { 
+            echo "Saldo Atual:".$this->saldo. "<br>"; 
+        } 
     } 
-  } 
   
-  $novaConta = new Conta(); 
-  $novaConta->verSaldo(); 
-  $novaConta->depositar(500); 
-  $novaConta->verSaldo(); 
-  $novaConta->sacar(150);
-  $novaConta->verSaldo(); ?>
+    $novaConta = new Conta(); 
+    $novaConta->verSaldo(); 
+    $novaConta->depositar(500); 
+    $novaConta->verSaldo(); 
+    $novaConta->sacar(150);
+    $novaConta->verSaldo();
 ?>
 ```
 Note que para acessarmos nossos atributos dentro dos métodos utilizamos a variável reservada $this. Se fosse preciso chamar algum método da própria classe dentro de um outro método teríamos de usar $this, que é usado para acessar atributos e métodos da própria classe e só existe dentro deste escopo. No PHP ele é fundamental e obrigatório, já em algumas outras linguagens de programação $this é opcional.
@@ -557,61 +560,61 @@ Um dos conceitos fundamentais da OO é a herança de classes, pois permite que u
         function sacar() {
         } 
         
-        class ContaCorrente extends Conta { 
-            function transferir($contaDestino, $valor) {
-                $this->saldo -= $valor; 
-            } 
-        }
+    class ContaCorrente extends Conta { 
+        function transferir($contaDestino, $valor) {
+            $this->saldo -= $valor; 
+        } 
+    }
     } 
  
-     $novaConta = new ContaCorrente(); 
-     $novaConta->transferir('xxx-xxx', 500); 
-     echo "Saldo:".$novaConta->saldo; 
- ?>
+    $novaConta = new ContaCorrente(); 
+    $novaConta->transferir('xxx-xxx', 500); 
+        echo "Saldo:".$novaConta->saldo; 
+?>
 ```
 
 ##### Classes abstratas
 Uma classe abstrata é uma classe que não pode ser instanciada como um objeto diretamente. Ela tem que ser estendida por alguma classe concreta, e quando um objeto desta classe for criado, ele herdará métodos e atributos da classe abstrata. Veja o próximo exemplo:
 ```PHP
 <?php abstract 
- class Conta{ 
-     public $saldo =0; 
-     public function sacar() { 
-     } 
+    class Conta{ 
+        public $saldo =0; 
+        public function sacar() { 
+        } 
      
-     public function depositar($valor) { 
-     }
+        public function depositar($valor) { 
+        }
      
-     class ContaPoupanca extends Conta{ 
-         public function resgatar($valor) {
-         } 
-     } 
+    class ContaPoupanca extends Conta{ 
+        public function resgatar($valor) {
+        } 
+    } 
      
-     $conta1 = new ContaPoupanca(); 
-     $conta1->depositar(500); 
-     $conta1->resgatar(250); ?>
+    $conta1 = new ContaPoupanca(); 
+    $conta1->depositar(500); 
+    $conta1->resgatar(250); 
 ?>
 Note que a classe estendida faz uso dos métodos declarados na classe abstrata, ou seja, em classes abstratas e concretas o conceito de herança é o mesmo. Mas, para que serve uma classe abstrata? Vamos pensar no funcionamento de um banco, onde os clientes podem ter uma conta corrente e poupança: o funcionamento de uma conta segue um determinado padrão, o que difere uma da outra são as ações (métodos) que podemos executar.
 ```
 ##### Métodos Abstratos
 odemos ter também métodos abstratos em nossas classes, como mostra o próximo exemplo:
 ```PHP
- <?php 
-  abstract class Conta { 
-      public $saldo = 0; 
-      public function sacar() { 
-      } 
+<?php 
+     abstract class Conta { 
+         public $saldo = 0; 
+         public function sacar() { 
+         } 
       
-      public function depositar($valor) { 
-      } 
-  } 
-  class ContaPoupanca extends Conta { 
-      public function resgatar($valor) { 
-      } 
-  } 
-  $conta1 = new ContaPoupanca(); 
-  $conta1->depositar(500); 
-  $conta1->resgatar(250); ?>
+         public function depositar($valor) { 
+         } 
+     } 
+     class ContaPoupanca extends Conta { 
+         public function resgatar($valor) { 
+         } 
+     } 
+     $conta1 = new ContaPoupanca(); 
+     $conta1->depositar(500); 
+     $conta1->resgatar(250); ?>
 ?>
 ```
 Todo método abstrato precisa, obrigatoriamente, ser implementado na classe filha, ou seja, todas as contas, independentemente do tipo devem possuir as operações básicas de saque, depósito, transferência e consulta. Porém, contas de tipos diferentes podem tratar estas ações de formas diferentes. Por exemplo: um depósito em uma conta poupança gera um certo rendimento ao saldo aplicado - para este caso um método abstrato é uma forma de garantir que este método seja implementado na classe ContaPoupança e em todas as outras classes que estende–lás.
@@ -620,104 +623,105 @@ Todo método abstrato precisa, obrigatoriamente, ser implementado na classe filh
 Uma classe final é uma classe que não pode ser estendida por nenhuma outra classe, ou seja, a classe final não tem herdeiros, pois ela é a última de sua hierarquia. Em nosso exemplo temos uma conta do tipo poupança que, pela regra de negócio de um banco, não possui uma derivação, ou seja, não deve ser estendida. Para estes casos definimos a classe como final, ou seja, somente existirão objetos da classe poupança e não filhos da mesma, pois o correto é que todas as contas estendam a nossa classe pai Conta e mais nenhuma outra, como mostra o próximo exemplo:
 ```PHP
 <?php 
-final class ContaPoupanca { 
-     public function resgatar($valor){ 
-     } 
-     public function verSaldo(){ 
-     } 
- } 
- $poupanca = new ContaPoupanca(); 
- $poupanca->resgatar(250); 
+    final class ContaPoupanca { 
+        public function resgatar($valor){ 
+        } 
+        public function verSaldo(){ 
+        } 
+    } 
+    $poupanca = new ContaPoupanca(); 
+    $poupanca->resgatar(250); 
 ?>
 ```
 ##### Métodos Finais
 Também podemos ter métodos finais que jamais podem ser reescritos nas classes filhas. Em nosso exemplo de agência bancária, podemos concluir que o método sacar de uma Conta é padrão para todas as Contas, independentemente de seu tipo. Quando temos uma situação como esta podemos definir estes métodos como final, impedindo assim que eles sejam reescritos e saiam do padrão estabelecido na classe pai, como mostra o exemplo a seguir:
 ```PHP
 <?php 
- class Conta { 
-     public function depositar($valor){ 
-     } 
+    class Conta { 
+        public function depositar($valor){ 
+        } 
      
-     final public function sacar($valor){ #método final, não pode ser reescrito 
-     } 
- } 
- class ContaCorrente extends Conta{ public function depositar(){ 
-      public function depositar(){
-      } 
- } 
+        final public function sacar($valor){ #método final, não pode ser reescrito 
+        } 
+    } 
+    class ContaCorrente extends Conta{ public function depositar(){ 
+        public function depositar(){
+        }  
+    } 
 ?>
 ```
 ##### Traits
 Traits, a partir do PHP 5.4, nos proporcionam uma maneira simples e objetiva de reaproveitamento de código, pois são como classes onde usamos a palavra reservada trait, então escrevemos os métodos que queremos. E para usarmos um trait em uma classe usamos a palavra USE, como podemos observar no próximop exemplo:
 ```PHP
 <?php 
- class Conta { 
-     public $saldo = 0; 
-     public function getSaldo() {
-         echo "Saldo Atual: {$this->saldo}"; 
-     } 
- } 
- trait Acoes { 
-     public function getSaldo(){ 
-         echo "Saldo Disponivel: {$this->saldo}"; 
-     } 
+    class Conta { 
+        public $saldo = 0; 
+        public function getSaldo() {
+            echo "Saldo Atual: {$this->saldo}"; 
+        } 
+    } 
+    trait Acoes { 
+        public function getSaldo(){ 
+            echo "Saldo Disponivel: {$this->saldo}"; 
+        } 
      
-     public function depositar($valor){ 
-         $this->saldo += $valor; 
-     } 
+        public function depositar($valor){ 
+            $this->saldo += $valor; 
+        } 
      
-     public function sacar($valor){ 
-         if($this->saldo >= $valor) { 
-             $this->saldo -= $valor; 
-         } 
-     } 
- } 
+        public function sacar($valor){ 
+            if($this->saldo >= $valor) { 
+                $this->saldo -= $valor; 
+            } 
+        } 
+    } 
  
- class ContaCorrente extends Conta { 
-     use Acoes; 
- } 
- $o = new ContaCorrente(); 
-     $o->depositar(500); 
-     $o->sacar(200); 
-     $o->getSaldo(); 
-     // Saldo Disponivel: 300 
- ?>
+    class ContaCorrente extends Conta { 
+        use Acoes; 
+    } 
+    
+    $o = new ContaCorrente(); 
+    $o->depositar(500); 
+    $o->sacar(200); 
+    $o->getSaldo(); 
+    // Saldo Disponivel: 300 
+?>
  ```
 Note que o método getSaldo() foi reescrito dentro do Trait, ou seja, irá sobrescrever os métodos da classe base (pai). Podemos ainda usar múltiplos traits em nossas classes, como no próximo exemplo.
 ```PHP
 <?php 
- class Conta { 
-     public $saldo = 0; 
-     public function getSaldo() { 
-         echo "Saldo Atual: {$this->saldo}"; 
-     } 
- } 
- trait Acoes { 
-     public function depositar($valor) { 
-         $this->saldo += $valor; 
-     } 
-     public function sacar($valor) { 
-         if($this->saldo >= $valor) {
-             $this->saldo -= $valor; 
-         } 
-     } 
- } 
- trait consultaExtrato { 
-     public function getSaldo() { 
-         echo "Saldo Disponivel para saque:{$this->saldo}<br>"; 
-     } 
-     public function gerarExtrato($periodo) { 
-         echo "Gerando extrato período $periodo aguarde..."; 
-     } 
- } 
- class ContaCorrente extends Conta { 
-     use Acoes, consultaExtrato; 
- } 
- $o = new ContaCorrente(); 
- $o->depositar(500); 
- $o->sacar(200); 
- $o->getSaldo(); 
- $o->gerarExtrato('20/01/2013'); 
+    class Conta { 
+        public $saldo = 0; 
+        public function getSaldo() { 
+            echo "Saldo Atual: {$this->saldo}"; 
+        } 
+    } 
+    trait Acoes { 
+        public function depositar($valor) { 
+            $this->saldo += $valor; 
+        } 
+        public function sacar($valor) { 
+            if($this->saldo >= $valor) {
+                $this->saldo -= $valor; 
+            } 
+        } 
+    } 
+    trait consultaExtrato { 
+        public function getSaldo() { 
+            echo "Saldo Disponivel para saque:{$this->saldo}<br>"; 
+        } 
+        public function gerarExtrato($periodo) { 
+            echo "Gerando extrato período $periodo aguarde..."; 
+        } 
+    } 
+    class ContaCorrente extends Conta { 
+        use Acoes, consultaExtrato; 
+    } 
+    $o = new ContaCorrente(); 
+    $o->depositar(500); 
+    $o->sacar(200); 
+    $o->getSaldo(); 
+    $o->gerarExtrato('20/01/2013'); 
 ?>
 ```
 Desta vez temos dois traits com nomes diferentes, e note que sobrescrevemos o método getSaldo() novamente no trait consultaExtrato.
@@ -728,22 +732,22 @@ O PDO veio no PHP 5.1 e dá suporte a vários sistemas gerenciadores de banco de
 A conexão com um banco de dados através do PDO se dá durante a criação de um objeto da classe PDO, passando informações de conexão com o banco na forma de um DSN (Data Source Name), além das credencias de acesso, como mostra o próximo exemplo.
 ```PHP
 <?php 
- // MySQL $db = new PDO("mysql:host=localhost;dbname=banco", "root", "senha"); 
+    // MySQL $db = new PDO("mysql:host=localhost;dbname=banco", "root", "senha"); 
  
- // PostgreSQL 
+    // PostgreSQL 
  
- $db = new PDO("pgsql:host=localhost;dbname=banco", "root", "senha"); 
+    $db = new PDO("pgsql:host=localhost;dbname=banco", "root", "senha"); 
  
- // SQLite 
+    // SQLite 
  
- $db = new PDO("sqlite:banco.sqlite"); 
+    $db = new PDO("sqlite:banco.sqlite"); 
 ?>
 ```
 Veja que criamos a $db que guarda um objeto da classe PDO e entre parênteses passamos o host, nome do banco, usuário e senha. Uma vez que o objeto da classe PDO tenha sido instanciado, conectamos em nosso banco. Para desconectar, basta "matarmos" o objeto ou aguardar que ele seja morto automaticamente ao final de nosso script, como podemos ver a seguir:
 ```PHP
 <?php 
- $db = new PDO("mysql:host=localhost;dbname=banco", "root", ""); 
- unset($db); 
+    $db = new PDO("mysql:host=localhost;dbname=banco", "root", ""); 
+    unset($db); 
 ?>
 ```
 Veja que utilizamos o unset para encerrar a conexão.
@@ -752,10 +756,10 @@ Veja que utilizamos o unset para encerrar a conexão.
 Depois de conectados temos a nossa disposição uma série de métodos para lidar com o banco. Utilizando a linguagem SQL, vamos fazer o uso do método exec, de acordo com o código do próximo exemplo.
 ```PHP
 <?php  
-  $db = new PDO("mysql:host=localhost;dbname=banco", "root", "");
+    $db = new PDO("mysql:host=localhost;dbname=banco", "root", "");
    
-  $db->exec("CREATE TABLE clientes(id INT AUTO_INCREMENT, nome VARCHAR(255), email VARCHAR(255)) ");
-  ?>
+    $db->exec("CREATE TABLE clientes(id INT AUTO_INCREMENT, nome VARCHAR(255), email VARCHAR(255)) ");
+?>
 ```
 Veja que acessamos o método exec através de nossa conexão com o “->” e criamos uma tabela chamada clientes com os campos id, nome e email.
 
@@ -763,9 +767,9 @@ Veja que acessamos o método exec através de nossa conexão com o “->” e cr
 Para fazer consultas usamos o método query, que executa um comando SQL e traz para nós linhas de um banco de dados. Veja o próximo exemplo.
 ```PHP
 <?php 
-     $db = new PDO("mysql:host=localhost;dbname=banco", "root", ""); 
+    $db = new PDO("mysql:host=localhost;dbname=banco", "root", ""); 
   
-     $dados = $db->query("SELECT * FROM clientes"); 
+    $dados = $db->query("SELECT * FROM clientes"); 
 ?>
 ```
 Veja que dentro da $dados é executada uma query que traz todos os dados da tabela clientes. Podemos ainda acessar nossos dados através dos métodos fetch e fetchAll.
@@ -783,7 +787,8 @@ O método fetch retorna apenas um resultado para nós, enquanto o fetchAll irá 
 ```
 Note que, por padrão, os métodos retornam índices associativos e numéricos. Podemos fazer com que somente índices associativos sejam mostrados ou apenas numéricos, como mostra o código a seguir
 ```PHP
-<?php $db = new PDO("mysql:host=localhost;dbname=banco", "root",""); 
+<?php 
+    $db = new PDO("mysql:host=localhost;dbname=banco", "root",""); 
     $dados = $db->query("SELECT * FROM clientes"); 
     $assoc = $dados->fetchAll(PDO::FETCH_ASSOC); 
     $num = $dados->fetchAll(PDO::FETCH_NUM); 
