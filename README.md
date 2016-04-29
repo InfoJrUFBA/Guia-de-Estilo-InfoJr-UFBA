@@ -15,10 +15,6 @@ O guia abaixo é um documento em construção que tem como finalidade padronizar
  1.4 [Identação](#14---identação)
  
  1.5 [Espaços](#15---espaços)
- 
- 1.6 [Codificação de Caracteres](#16---codificação-de-caracteres)
- 
- 1.7 [Comentários](#17---comentários)
 
 2. [REGRAS DE ESTILO](#2---regras-de-estilo)
 
@@ -140,15 +136,8 @@ HTML
 <p>Infojr</p>
 ```
 
-#### 1.6 - Codificação de Caracteres
-Verifique se o seu editor usa UTF-8 como codificação de caracteres. É importante que especifique a codificação em templates HTML e documentos via ```<meta charset="utf-8">```.
-
 #### 1.7 - Comentários
-Utilize os comentários para explicar o código, conforme necessário, sempre que possível. Indicando o que ele cobre, qual a finalidade, para que serve, e etc. Isso facilita a compreensão do mesmo por outras pessoas que tiverem acesso ao seu código. Para fazer um comentário, envolva o exemple desejado entre ```<!-- -->```.
-
-```
-<!--Este é um comentário. Comentários não são exibidos no navegador.-->
-```
+Utilize os comentários para explicar o código, conforme necessário, sempre que possível. Indicando o que ele cobre, qual a finalidade, para que serve, e etc. Isso facilita a compreensão do mesmo por outras pessoas que tiverem acesso ao seu código. Para fazer um comentário, para cada linguagem com a qual estiver desenvolvendo, use de preferência a marcação indicada no guia de estilo referente a essa linguagem. 
 
 ### 2 - REGRAS DE ESTILO
 #### 2.1 - HTML
@@ -196,6 +185,14 @@ Use aspas duplas para os atributos html.
 <input type="text" name="user[name]" id="user_name">
 ```
 
+##### Codificação de Caracteres
+Verifique se o seu editor usa UTF-8 como codificação de caracteres. É importante que especifique a codificação em templates HTML e documentos via ```<meta charset="utf-8">```.
+
+##### Comentários
+Para comentários em HTML, utilize a seguinte marcação ```<!-- -->```
+```HTML
+<!--Isto é um comentário. Comentários não são exibidos no navegador-->
+```
 ##### Valide sua página
 Sempre que possível verifique se sua página HTML segue os padrões estabelecidos pelo [W3C](http://www.w3schools.com/).
 
@@ -367,6 +364,12 @@ p {
 }
 ```
 
+##### Comentários
+Para comentários em CSS, utilize a seguinte marcação ```/* */```
+```CSS
+/*Isto é um comentário. Comentários não são exibidos no navegador*/
+```
+
 ##### Valide o seu estilo
 Sempre que possível verifique se o seu arquivo CSS segue os padrões propostos pela [W3C](http://www.w3schools.com/).
 
@@ -458,6 +461,20 @@ Nomes de funções sempre começam com letra minúscula e seguem o "camelCase".
 
 ##### Variáveis
 Devem possuir apenas caracteres alfanuméricos. Underscores (_) não são permitidos.
+
+##### Comentários
+O PHP suporta comentários no estilo 'C', 'C++' e do Unix shell (estilo Perl). Por exemplo: 
+```PHP
+
+<?php
+    echo 'Isto é um teste'; // Estilo de comentário de uma linha em  c ou c++
+    /* Este é um comentário de múltiplas linhas
+       ainda outra linha de comentário */
+    echo 'Isto é ainda outro teste';
+    echo 'Um teste final'; # Este é um comentário de uma linha no estilo shell
+?>
+
+```
 
 ##### 2.4.1 Orientação a Objetos
 A orientação a objetos (OO) é um padrão de programação em que um software não é composto por um grande bloco de códigos específicos, e sim de vários blocos de códigos distantes e independentes, que juntos montam um sistema. O PHP faz parte de um grupo de linguagens que possuem suporte a OO, mas não é preso a ela. Esse padrão não possui um objetivo único e tem como objetivo:
@@ -866,7 +883,7 @@ Se você precisa usar acentos graves por causa de algo em seu nome de tabela, re
 
 ### Recuo e novas linhas
 
-* Newlines should be used for any query that is at all complex or longer than 72 characters.
+* Novas linhas podem ser utilizadas em qualquer consulta que seja complexa ou maior que 72 caracteres;
 
 * Each clause should begin a new line.
   SELECT, JOIN, LEFT JOIN, OUTER JOIN, WHERE, UNION, etc. are keywords that begin new clauses.
