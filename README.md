@@ -885,8 +885,8 @@ Se você precisa usar acentos graves por causa de algo em seu nome de tabela, re
 
 * Novas linhas podem ser utilizadas em qualquer consulta que seja complexa ou maior que 72 caracteres;
 
-* Each clause should begin a new line.
-  SELECT, JOIN, LEFT JOIN, OUTER JOIN, WHERE, UNION, etc. are keywords that begin new clauses.
+* Cada condição deve começar uma nova linha.
+  SELECT, JOIN, LEFT JOIN, OUTER JOIN, WHERE, UNION, etc. São palavras chaves que determina novas condições.
 
     ```SQL
     /* Good */
@@ -898,8 +898,8 @@ Se você precisa usar acentos graves por causa de algo em seu nome de tabela, re
     SELECT COUNT(1) FROM tablename WHERE really_loooong_column = CONCAT(other_column, ' street');
     ```    
 
-* The keywords that begin a clause should be right-aligned.
-  The idea is to make a single character column between the keywords and their objects.
+* As palavras-chave que começam uma condição devem ser alinhadas à direita .
+  A ideia é fazer com que uma única coluna de caracteres esteja entre as palavras-chave e seus objetos.
 
     ```SQL
     /* Good */
