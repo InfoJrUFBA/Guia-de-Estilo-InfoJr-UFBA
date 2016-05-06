@@ -55,7 +55,7 @@ O guia abaixo é um documento em construção que tem como finalidade padronizar
     
     - [Prepared Statements](#prepared-statements)
  
- 2.5 [MYSQL]()
+ 2.5 [MYSQL](#25---mysql)
  
  2.6 [PADRONIZAÇÃO DE PASTAS]()
  
@@ -227,7 +227,7 @@ As propriedades devem ser declaradas em ordem alfabética. Contudo, as proprieda
 
 ```css
 input {
-    background: fuchsia;
+    border: 1px solid;
     border-radius: 4px;
     border: 1px solid;
     -moz-border-radius: 4px;
@@ -865,36 +865,29 @@ Note que temos apenas uma query, mas iremos executar três vezes com três valor
 #### 2.5 - MySQL
 O objetivo deste guia de estilo é o de melhorar a legibilidade de consultas SQL. Tendo como base de elaboração o seguinte [link](https://github.com/meadmaker/sql-style-guide).
 
-##### Formatação
-
-###### Keywords
+##### Keywords
 As palavras-chaves devem ser maiúsculas.
 ```SQL
-/* Good */
+/*Recomendado*/
     SELECT COUNT(1) FROM tablename WHERE 1;
  
-    /* Bad */
+ /*Não Recomendado*/
     select count(1) from tablename where 1;
 ```
 
-###### Names
+##### Names
 Os objetos nomeados não deve ser cercado por crases```(``)```, não importa o que o MySQL disser, quando for nomear a estrutura da tabela.
 Se você precisa usar acentos graves por causa de algo em seu nome de tabela, renomeie o campo da mesma.
 
-### Recuo e novas linhas
-
-* Novas linhas podem ser utilizadas em qualquer consulta que seja complexa ou maior que 72 caracteres;
-
-* Cada condição deve começar uma nova linha.
-  SELECT, JOIN, LEFT JOIN, OUTER JOIN, WHERE, UNION, etc. São palavras chaves que determina novas condições.
-
-    ```SQL
-    /* Good */
+##### Recuo e novas linhas
+Novas linhas podem ser utilizadas em qualquer consulta que seja complexa ou maior que 72 caracteres. Além disso, cada condição deve começar uma nova linha. Os termos: SELECT, JOIN, LEFT JOIN, OUTER JOIN, WHERE, UNION, etc. São palavras chaves que determina novas condições.
+```SQL
+/*Recomendado*/
     SELECT COUNT(1)
       FROM tablename
      WHERE really_loooong_column = CONCAT(other_column, ' street');
     
-    /* Bad */
+ /*Não Recomendado*/
     SELECT COUNT(1) FROM tablename WHERE really_loooong_column = CONCAT(other_column, ' street');
     ```    
 
@@ -902,7 +895,7 @@ Se você precisa usar acentos graves por causa de algo em seu nome de tabela, re
   A ideia é fazer com que uma única coluna de caracteres esteja entre as palavras-chave e seus objetos.
 
     ```SQL
-    /* Good */
+    /*Recomendado*/
     SELECT COUNT(1)
       FROM tablename
      WHERE 1;
@@ -911,7 +904,7 @@ Se você precisa usar acentos graves por causa de algo em seu nome de tabela, re
         FROM tablename
     GROUP BY key_column;
     
-    /* Bad */
+    /*Não Recomendado*/
     SELECT COUNT(1)
     FROM tablename
     WHERE 1;
