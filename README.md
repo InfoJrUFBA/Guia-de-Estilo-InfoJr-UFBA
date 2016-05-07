@@ -865,7 +865,92 @@ Note que temos apenas uma query, mas iremos executar três vezes com três valor
 #### 2.5 - MySQL
 O objetivo deste guia de estilo é o de melhorar a legibilidade de consultas SQL. Tendo como base de elaboração o seguinte [link](https://github.com/meadmaker/sql-style-guide).
 
+#####Palavras-Chaves
+Palavras-chave deve ser em maiúscula.
+```SQL
+/*Recomendado*/
+SELECT COUNT(1) FROM tablename WHERE 1;
+
+/*Não Recomendado*/
+select count(1) from tablename where 1;
+```
+
+#####Nomes
+
+######Tabelas Campos
+
+* Utilizar nomes sempre minusculos, entretanto para nomes compostos, a segunda palavra poder ser começada com letra maíscula, oq facilita no momento a relação com as váriaveis declaradas no PHP;
+* Utilizar nomes na língua inglesa
+* Em caso de nomes compostos utilizar ```_```(underscore) para separar os nomes;
+```SQL
+/*Não Recomendado*/
+CREATE TABLE IF NOT EXISTS `LOGISTICA`.`registration-NUMBER` (
+  `id` INT NOT NULL,
+  `name` VARCHAR(255) NOT NULL
+
+/* Recomendado */
+CREATE TABLE IF NOT EXISTS `logistica`.`registration_Number` (
+  `id` INT NOT NULL,
+  `name` VARCHAR(255) NOT NULL
+```
+
+######DataBase
+* Utilizar nomes sempre minusculos;
+```SQL
+/*Não Recomendado*/
+CREATE SCHEMA IF NOT EXISTS `GUIAESTILO` DEFAULT CHARACTER SET utf8 ;
+
+/*Recomendado*
+CREATE SCHEMA IF NOT EXISTS `guiaestilo` DEFAULT CHARACTER SET utf8 ;
+```
+
+* Na modelagem do banco de dados, criar um usuário especifico de cada projeto. este levará o mesmo nome que o banco de dados. Uma senha padrão será utilizada para todos os bancos utlizados nos projetos;
+
+#####Estrutura
+* Sempre que for apelidar colunas utilizar da palavra chave AS para este fim. Isso garante que, se uma virgula seja posta num local indevido, não haja erros de relacionamento
+```SQL
+/*Não Recomendado*/
+  SELECT ebe_ebs_sox_flag_set_for_all_crs sox_ok
+    FROM tablename;
+
+/*Recomendado*/
+  SELECT ebe_ebs_sox_flag_set_for_all_crs AS sox_ok
+    FROM tablename;
+```
+
+* Pseudônimos em tabelas e colunas devem ser descritivas. Muitas variáveis com nomes do tipo "a", "b", "x" acabam por confundir ao invés de ajudar ao longo do processo;
+
+* Nomes pequenos para os pseudônimos de tabela às vezes pode trabalhar como abreviaturas . Como exemplo , se "releases" é referenciado com freqüência, pode fazer sentido para abrevia-lo com "r". No entanto, "rel" é quase tão curto, e muito mais descritivo. Tem um bom motivo para "r" em vez de "rel";
+
+* Utilizar pseudônimos para subconsulta deve ser ainda mais descritivo. Subqueries efetivamente criam tabelas mescladas na memória. Entretanto, se você utlizar nomes como "x", então não ira sugerir sua verdadeira intenção para outro desenvolvedor;
+```SQL
+/*Não Recomendado*/
+SELECT *
+  FROM (SELECT table1.id AS child, 
+               table2.id AS parent
+          FROM table1
+          JOIN table2 ON (table2.parent_id = table1.id) ) x;
+
+/*Não Recomendado*/
+SELECT *
+  FROM (SELECT table1.id AS child, 
+               table2.id AS parent
+          FROM table1
+          JOIN table2 ON (table2.parent_id = table1.id) ) link;
+
+
+/*Recomendado*/
+SELECT *
+  FROM (SELECT table1.id AS child, 
+               table2.id AS parent
+          FROM table1
+          JOIN table2 ON (table2.parent_id = table1.id) ) parentage;
+```
+
+* Abreviaturas não ajudam em sub-queries para consulta; 
+
 #### 2.6 - PADRONIZAÇÃO DE PASTAS
+
 ### 3 - EDITORES DE TEXTO
 A seguir alguns editores de textos que podem ser utilizados no desenvolvimento dos projetos.
 #### 3.1 - Brackets
