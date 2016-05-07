@@ -879,9 +879,8 @@ select count(1) from tablename where 1;
 
 ######Tabelas & Campos
 
-* Utilizar nomes sempre minusculos, entretanto para nomes compostos, a segunda palavra poder ser começada com letra maíscula, oq facilita no momento a relação com as váriaveis declaradas no PHP;
+* Utilizar nomes sempre minusculos, entretanto para nomes compostos, a segunda palavra poder deve começar com letra maíscula, o que facilita no momento, a relação com as váriaveis declaradas no PHP;
 * Utilizar nomes na língua inglesa
-* Em caso de nomes compostos utilizar ```_```(underscore) para separar os nomes;
 ```SQL
 /*Não Recomendado*/
 CREATE TABLE IF NOT EXISTS `LOGISTICA`.`registration-NUMBER` (
@@ -889,7 +888,7 @@ CREATE TABLE IF NOT EXISTS `LOGISTICA`.`registration-NUMBER` (
   `name` VARCHAR(255) NOT NULL
 
 /* Recomendado */
-CREATE TABLE IF NOT EXISTS `logistica`.`registration_Number` (
+CREATE TABLE IF NOT EXISTS `logistica`.`registrationNumber` (
   `id` INT NOT NULL,
   `name` VARCHAR(255) NOT NULL
 ```
