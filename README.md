@@ -877,7 +877,7 @@ select count(1) from tablename where 1;
 
 #####Nomes
 
-######Tabelas Campos
+######Tabelas & Campos
 
 * Utilizar nomes sempre minusculos, entretanto para nomes compostos, a segunda palavra poder ser começada com letra maíscula, oq facilita no momento a relação com as váriaveis declaradas no PHP;
 * Utilizar nomes na língua inglesa
