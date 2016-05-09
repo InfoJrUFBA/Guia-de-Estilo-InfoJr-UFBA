@@ -13,7 +13,7 @@ O guia abaixo é um documento em construção que tem como finalidade padronizar
  1.3 [Última Linha](#13---Última-linha)
 
  1.4 [Identação](#14---identação)
- 
+
  1.5 [Espaços](#15---espaços)
 
 2. [REGRAS DE ESTILO](#2---regras-de-estilo)
@@ -25,40 +25,40 @@ O guia abaixo é um documento em construção que tem como finalidade padronizar
  2.3 [JAVA SCRIPT](#23---javascript)
 
  2.4 [PHP](#24---php)
- 
+
   2.4.1 [Orientação a Objetos](#241-orientação-a-objetos)
-   
+
     - [Classes e Objetos](#classes-e-objetos)
-   
+
     - [Atriibutos e Métodos](#atributos-e-métodos)
-   
+
     - [Herança](#herança)
-   
+
     - [Classes Abstratas](classes-abstratas)
-   
+
     - [Métodos Abstratos](métodos-abstratos)
-   
+
     - [Classes Finais](#classes-finais)
-   
+
     - [Métodos Finais](#métodos-finais)
-   
+
     - [Traits](#traits)
-   
-   
+
+
   2.4.2 [PHP Data Objects(PDO)](#242-php-data-objectspdo)
- 
+
     - [Executando comandos](#executando-comandos)
-    
+
     - [Fazendo consultas](#fazendo-consultas)
-    
+
     - [Transações](#transações)
-    
+
     - [Prepared Statements](#prepared-statements)
- 
+
  2.5 [MYSQL](#25---mysql)
- 
+
  2.6 [PADRONIZAÇÃO DE PASTAS]()
- 
+
 3. [EDITORES DE TEXTO](#3---editores-de-texto)
 
  3.1 [BRACKETS](#31---brackets)
@@ -72,7 +72,7 @@ As regras descritas nesta seção devem ser aplicadas para qualquer arquivo inde
 #### 1.1 - Protocolo para Recursos Externos
 Omitir a parte de protocolo ```(http:, https:)``` de URLs
 
-```html 
+```html
 <!-- Não Recomendado -->
 <script src="https://github.com/InfoJrUFBA/info_style_guide/edit/master/README.md"></script>
 
@@ -93,7 +93,7 @@ function createBadge() {
 ```
 
 #### 1.4 - Identação
-A indentação padrão é de quatro espaços. Não utilize tabs junto com espaços. 
+A indentação padrão é de quatro espaços. Não utilize tabs junto com espaços.
 
 ```html
 HTML
@@ -130,20 +130,20 @@ Remova os espaços existentes no final das linhas.
 HTML
 
 <!-- Não Recomendado -->
-<p>Infojr</p>___
+<p>InfoJr</p>___
 
 <!-- Recomendado -->
-<p>Infojr</p>
+<p>InfoJr</p>
 ```
 
 #### 1.7 - Comentários
-Utilize os comentários para explicar o código, conforme necessário, sempre que possível. Indicando o que ele cobre, qual a finalidade, para que serve, e etc. Isso facilita a compreensão do mesmo por outras pessoas que tiverem acesso ao seu código. Para fazer um comentário, para cada linguagem com a qual estiver desenvolvendo, use de preferência a marcação indicada no guia de estilo referente a essa linguagem. 
+Utilize os comentários para explicar o código, conforme necessário, sempre que preciso. Indicando o que ele cobre, qual a finalidade, para que serve, e etc. Isso facilita a compreensão do mesmo por outras pessoas que tiverem acesso ao seu código. Para fazer um comentário, para cada linguagem com a qual estiver desenvolvendo, use de preferência a marcação indicada no guia de estilo referente a essa linguagem.
 
 ### 2 - REGRAS DE ESTILO
 #### 2.1 - HTML
-As regras de estilo estabelicidas para HTML baseados no [guia de estilo para HTML](https://google.github.io/styleguide/htmlcssguide.xml#HTML_Style_Rules) da Google.
+As regras de estilo estabelicidas para HTML são baseadas no [guia de estilo para HTML](https://google.github.io/styleguide/htmlcssguide.xml#HTML_Style_Rules) da Google.
 ##### Tipo de Documento
-Use HTML5. O HTML5 é o preferido para todos os documentos HTML. Recomenda-se utilizar o HTML como text/html. Não use XHTML. XHTML, como application/xhtml+xml, pois carece de suporte ao navegador e infraestrutura, além de oferecer menos espaço para sua otimização. 
+Use HTML5. O HTML5 é o preferido para todos os documentos HTML. Recomenda-se utilizar o HTML como text/html. Não use XHTML. XHTML, como application/xhtml+xml, pois carece de suporte ao navegador e infraestrutura, além de oferecer menos espaço para sua otimização.
 Ao definir o tipo de documento utilize a tag que expresse que a versão utilizada será o HTML5.
 
 ```html
@@ -186,7 +186,7 @@ Use aspas duplas para os atributos html.
 ```
 
 ##### Codificação de Caracteres
-Verifique se o seu editor usa UTF-8 como codificação de caracteres. É importante que especifique a codificação em templates HTML e documentos via ```<meta charset="utf-8">```.
+Verifique se o seu editor utiliza UTF-8 como codificação de caracteres. É importante que especifique a codificação em templates HTML e documentos via ```<meta charset="utf-8">```.
 
 ##### Comentários
 Para comentários em HTML, utilize a seguinte marcação ```<!-- -->```
@@ -197,7 +197,7 @@ Para comentários em HTML, utilize a seguinte marcação ```<!-- -->```
 Sempre que possível verifique se sua página HTML segue os padrões estabelecidos pelo [W3C](http://www.w3schools.com/).
 
 ####2.2 - CSS
-As regra de estilo estabelicidas para CSS baseados no [guia de estilo para CSS](https://google.github.io/styleguide/htmlcssguide.xml#CSS_Style_Rules) da Google.
+As regra de estilo estabelicidas para CSS são baseadas no [guia de estilo para CSS](https://google.github.io/styleguide/htmlcssguide.xml#CSS_Style_Rules) da Google.
 ##### Escrita
 Utilize sempre letras minúsculas para representar tags, propriedades e valores quando possível.
 
@@ -213,7 +213,7 @@ h1 {
 ```
 
 ##### Aspas
-Use aspas simples quando necessário.
+Utilize aspas simples quando necessário.
 /* Não recomendado */
 p {
     font-family: "Comic Sans MS", sans-serif;
@@ -223,7 +223,7 @@ p {
     font-family: 'Comic Sans MS', sans-serif;
 }
 ##### Ordem de Declaração
-As propriedades devem ser declaradas em ordem alfabética. Contudo, as propriedades de terceiros ```(-moz-, -webkit-)``` devem ser ordenadas juntos às propriedades que estas alteram.
+As propriedades devem ser declaradas em ordem alfabética. Contudo, as propriedades de terceiros ```(-moz-, -webkit-)``` devem ser ordenadas junto às propriedades que estas alteram.
 
 ```css
 input {
@@ -238,20 +238,20 @@ input {
 }
 ```
 
-**Dica:** Com o Sulime Text você pode selecionar as propiedades e pressionar F5 para ordená-las em ordem alfabética.
+**Dica:** Com o Sulime Text você pode selecionar as propiedades e pressionar F9 para ordená-las em ordem alfabética.
 ##### Nomeclatura para classes e IDs
-Utilize nomes que refletem a finalidade do elemento em questão.	Nomes que são específicos representam o real objetivo, são compreensíveis e estão menos propensos a serem mudados. Nomes mais simples também podem ser utilizados.
+Utilize nomes que refletem a finalidade do elemento em questão.	Nomes que são específicos, representam o real objetivo, são compreensíveis e estão menos propensos a serem mudados. Nomes mais simples também podem ser utilizados.
 
 ```css
 ID
 
 /*Não Recomendado*/
 #yee-1901 {}
-#navegação {}
+#navegacao {}
 
 /*Recomendado*/
-#gallery{}
-#navigation{}
+#gallery {}
+#navigation {}
 __________________________________________________________________________________________________________
 CLASS
 
@@ -286,11 +286,11 @@ CLASS
 ```
 
 ##### Faça uso da Taquigrafia (escrita rápida)
-O CSS oferece uma variedade de taquigrafia, propriedade que permite a escrita do código de maneira mais resumida. É interessante a utilização da mesma sempre que possível, mesmo nos casos em que apenas um valor é definido. 
+O CSS oferece uma variedade de taquigrafia, propriedade que permite a escrita do código de maneira mais resumida. É interessante a utilização da mesma sempre que possível, mesmo nos casos em que apenas um valor é definido.
 
 ```css
 /*Não Recomendado*/
-    -top border-style: none;
+    border-top-style: none;
     font-family: Palatino, geórgia, serif;
     font-size: 100%;
     line-height: 1.6;
@@ -321,13 +321,13 @@ Finalize todas as declarações de propriedades utilizando um ```;```.
 
 ```css
 /*Não Recomendado*/
-div{
-    color: blue
+div {
+    color: blue;
     font-family: 'Times New Roman', serif
 }
 
 /*Recomendado*/
-div{
+div {
     color: blue;
     font-family: 'Times New Roman', serif;
 }
@@ -370,18 +370,20 @@ Para comentários em CSS, utilize a seguinte marcação ```/* */```
 /*Isto é um comentário. Comentários não são exibidos no navegador*/
 ```
 
-##### Valide o seu estilo
-Sempre que possível verifique se o seu arquivo CSS segue os padrões propostos pela [W3C](http://www.w3schools.com/).
+##### Valide o seu código
+Sempre que possível, verifique se o seu arquivo CSS segue os padrões propostos pela [W3C](http://www.w3schools.com/).
 
 #### 2.3 - JavaScript
 O guia de estilo para JavaScript é baseado no [documento](http://javascript.crockford.com/code.html) escrito por Douglas Crockford. Se alguma regra não estiver escrita aqui tome o documento original como base.
+
 ##### Arquivos JavaScript
-Use tags ```<script>``` o mais tarde possível (geralmente antes de fechar a tag body). Isso reduz o atraso para carregar uma página. Não é necessário adicionar os atributos tipo ou language.
+Use tags ```<script>``` o mais tarde possível (geralmente antes de fechar a tag body). Isso reduz o atraso para carregar uma página. Não é necessário adicionar os atributos type ou language.
+
 #####Largura da linha
-Evite escrever linhas com mais de 120 caracteres. Em alguns casos será necessário quebrar comandos. Nesse caso quebre a linha depois de um operador.
+Evite escrever linhas com mais de 120 caracteres. Em alguns casos será necessário 'quebrar' comandos. Nesse caso quebre a linha depois de um operador.
 
 ##### Comentários
-Use comentários se somente necessário. Não comente coisas óbvias como:
+Use comentários somente se necessário. Não comente coisas óbvias como:
 
 ```
  var i = 0; // Atribui à variável i o valor zero.
@@ -411,7 +413,7 @@ Sempre declare variáveis antes de usá-las.
 ```
 
 ##### Declaração de funções
-Todas as funções devem ser declaradas antes de serem usadas. Não deve haver espaços entre o nome da função e o parêntese de abertura ```()```, mas deve haver um espaço no fechar de parênteses e abertura de chaves ```{```.
+Todas as funções devem ser declaradas antes de serem utilizadas. Não deve haver espaço entre o nome da função e o parêntese de abertura ```()```, mas deve haver um espaço no fechar de parênteses e abertura de chaves ```{```.
 
 ```javascript
 function validate(attribute, options) {
@@ -427,6 +429,7 @@ Todos os comandos devem ser terminados por ponto e vírgula ```;```.
 
 #### 2.4 - PHP
 Este guia utiliza as [recomendações](http://framework.zend.com/manual/1.10/en/coding-standard.html) definidas pela Zend Technologies para descrever o estilo a ser utilizado ao se escrever PHP. E [orientações](http://www.devmedia.com.br/) defindas pelo DevMedia para induzir conhecimentos sobre Orientação a Objetos e PDO no PHP.
+
 ##### Regras Gerais
 Para arquivos que possuem apenas código PHP é proibido o uso de tags de encerramento (?>). Isso evita a injeção de espaços desnecessários.
 
@@ -449,7 +452,7 @@ Classes devem possuir o namespace com o nome da pasta onde estão hospedados ime
 ```
 
 ##### Funções e Métodos
-Nomes de funções sempre começam com letra minúscula e seguem o "camelCase".
+Nomes de funções sempre começam com letra minúscula e seguem o padrão "camelCase".
 
 ```PHP
 <?php
@@ -463,7 +466,7 @@ Nomes de funções sempre começam com letra minúscula e seguem o "camelCase".
 Devem possuir apenas caracteres alfanuméricos. Underscores (_) não são permitidos.
 
 ##### Comentários
-O PHP suporta comentários no estilo 'C', 'C++' e do Unix shell (estilo Perl). Por exemplo: 
+O PHP suporta comentários no estilo 'C', 'C++' e do Unix shell (estilo Perl). Por exemplo:
 ```PHP
 
 <?php
@@ -492,14 +495,14 @@ A POO possui alguns conceitos fundamentais para seu desenvolvimento:
 - Atributos / Propriedades: são as características de um determinado objeto.
 
 ##### Classes e Objetos
-Algo que confunde bastante novos estudantes de Orientação a Objetos é a diferença entre Classes e Objetos. 
+Algo que confunde bastante novos estudantes de Orientação a Objetos é a diferença entre Classes e Objetos.
 As classes definem as características e o comportamento dos seus objetos. Cada característica é representada por um atributo e cada comportamento é definido por um método, logo uma classe não é um objeto e sim uma abstração de sua estrutura, no qual podemos definir quantos objetos desejamos ter.
 Para podermos entender melhor o funcionamento, vamos criar a nossa primeira classe e alguns objetos a partir dela, conforme o exemplo a seguir:
 ```PHP
  <?php
      Class Conta {
      }
-     
+
      $conta  = new Conta();
      $conta2 = new Conta();
      $conta3 = new Conta();
@@ -510,59 +513,59 @@ Criamos uma classe vazia de uma conta junto com três objetos que são dessa con
 ##### Atributos e Métodos
 Uma classe é composta por atributos e métodos, que juntos dão funcionalidade a um objeto. Podemos ver no próximo exemplo, uma classe composta por dois atributos e três métodos.
 ```PHP
-<?php 
-    Class Conta { 
-        public $saldo = 500; 
-        public $titular; 
-    
+<?php
+    Class Conta {
+        public $saldo = 500;
+        public $titular;
+
         function sacar($valor) {
-        } 
-    
-        function depositar($valor) { 
-        } 
-    
-        function verSaldo() { 
-        } 
+        }
+
+        function depositar($valor) {
+        }
+
+        function verSaldo() {
+        }
     }
-    
-    $conta1 = new Conta(); 
-    $conta1 ->depositar(500); 
-    $conta1->sacar(20); 
-  
-    $conta2 = new Conta(); 
-    $conta2->depositar(250); 
+
+    $conta1 = new Conta();
+    $conta1 ->depositar(500);
+    $conta1->sacar(20);
+
+    $conta2 = new Conta();
+    $conta2->depositar(250);
     $conta2->verSaldo();
 ?>
 ```
 A classe Conta tem como atributos o saldo da conta e o titular. E como métodos possui depositar(), sacar() e verSaldo(). Para acessarmos o método depositar() do nosso objeto $conta1 precisamos utilizar uma seta(->). Seu nome é Operador de Acesso a Objetos e é através dessa seta que indicamos que estamos acessando um atributo ou método de tal objeto. Faremos agora uma codificação mais completa em cima de nossa classe Conta, como podemos observar no exemplo a segur:
 ```PHP
-<?php 
-    Class Conta{ 
-        public $saldo = 0; 
-        public $titular; 
-    
-        function depositar($valor) { 
-            $this->depositar += $valor; 
-        } 
-    
-        function sacar($valor) { 
-            if(($this->saldo > 0) && ($this->saldo >= $valor)) { 
-                $this->saldo -= $valor; 
+<?php
+    Class Conta{
+        public $saldo = 0;
+        public $titular;
+
+        function depositar($valor) {
+            $this->depositar += $valor;
+        }
+
+        function sacar($valor) {
+            if(($this->saldo > 0) && ($this->saldo >= $valor)) {
+                $this->saldo -= $valor;
             }
-            else { 
-                echo "Saldo insuficiente"; 
-            } 
-        } 
-      
-        function verSaldo() { 
-            echo "Saldo Atual:".$this->saldo. "<br>"; 
-        } 
-    } 
-  
-    $novaConta = new Conta(); 
-    $novaConta->verSaldo(); 
-    $novaConta->depositar(500); 
-    $novaConta->verSaldo(); 
+            else {
+                echo "Saldo insuficiente";
+            }
+        }
+
+        function verSaldo() {
+            echo "Saldo Atual:".$this->saldo. "<br>";
+        }
+    }
+
+    $novaConta = new Conta();
+    $novaConta->verSaldo();
+    $novaConta->depositar(500);
+    $novaConta->verSaldo();
     $novaConta->sacar(150);
     $novaConta->verSaldo();
 ?>
@@ -572,69 +575,69 @@ Note que para acessarmos nossos atributos dentro dos métodos utilizamos a vari�
 ##### Herança
 Um dos conceitos fundamentais da OO é a herança de classes, pois permite que uma classe estenda outra e a classe filha vai herdar todos os atributos e métodos da classe pai. Ela pode então tanto possuir novos métodos e atributos, quanto reescrever métodos já existentes, como mostra o próximo exemplo:
 ```PHP
-<?php 
-    class Conta{ 
-        public $saldo = 0; 
-        function depositar($valor) { 
-        } 
-        
+<?php
+    class Conta{
+        public $saldo = 0;
+        function depositar($valor) {
+        }
+
         function sacar() {
-        } 
-        
-    class ContaCorrente extends Conta { 
+        }
+
+    class ContaCorrente extends Conta {
         function transferir($contaDestino, $valor) {
-            $this->saldo -= $valor; 
-        } 
+            $this->saldo -= $valor;
+        }
     }
-    } 
- 
-    $novaConta = new ContaCorrente(); 
-    $novaConta->transferir('xxx-xxx', 500); 
-        echo "Saldo:".$novaConta->saldo; 
+    }
+
+    $novaConta = new ContaCorrente();
+    $novaConta->transferir('xxx-xxx', 500);
+        echo "Saldo:".$novaConta->saldo;
 ?>
 ```
 
 ##### Classes abstratas
 Uma classe abstrata é uma classe que não pode ser instanciada como um objeto diretamente. Ela tem que ser estendida por alguma classe concreta, e quando um objeto desta classe for criado, ele herdará métodos e atributos da classe abstrata. Veja o próximo exemplo:
 ```PHP
-<?php abstract 
-    class Conta{ 
-        public $saldo =0; 
-        public function sacar() { 
-        } 
-     
-        public function depositar($valor) { 
+<?php abstract
+    class Conta{
+        public $saldo =0;
+        public function sacar() {
         }
-     
-    class ContaPoupanca extends Conta{ 
+
+        public function depositar($valor) {
+        }
+
+    class ContaPoupanca extends Conta{
         public function resgatar($valor) {
-        } 
-    } 
-     
-    $conta1 = new ContaPoupanca(); 
-    $conta1->depositar(500); 
-    $conta1->resgatar(250); 
+        }
+    }
+
+    $conta1 = new ContaPoupanca();
+    $conta1->depositar(500);
+    $conta1->resgatar(250);
 ?>
 Note que a classe estendida faz uso dos métodos declarados na classe abstrata, ou seja, em classes abstratas e concretas o conceito de herança é o mesmo. Mas, para que serve uma classe abstrata? Vamos pensar no funcionamento de um banco, onde os clientes podem ter uma conta corrente e poupança: o funcionamento de uma conta segue um determinado padrão, o que difere uma da outra são as ações (métodos) que podemos executar.
 ```
 ##### Métodos Abstratos
 odemos ter também métodos abstratos em nossas classes, como mostra o próximo exemplo:
 ```PHP
-<?php 
-     abstract class Conta { 
-         public $saldo = 0; 
-         public function sacar() { 
-         } 
-      
-         public function depositar($valor) { 
-         } 
-     } 
-     class ContaPoupanca extends Conta { 
-         public function resgatar($valor) { 
-         } 
-     } 
-     $conta1 = new ContaPoupanca(); 
-     $conta1->depositar(500); 
+<?php
+     abstract class Conta {
+         public $saldo = 0;
+         public function sacar() {
+         }
+
+         public function depositar($valor) {
+         }
+     }
+     class ContaPoupanca extends Conta {
+         public function resgatar($valor) {
+         }
+     }
+     $conta1 = new ContaPoupanca();
+     $conta1->depositar(500);
      $conta1->resgatar(250); ?>
 ?>
 ```
@@ -643,106 +646,106 @@ Todo método abstrato precisa, obrigatoriamente, ser implementado na classe filh
 ##### Classes Finais
 Uma classe final é uma classe que não pode ser estendida por nenhuma outra classe, ou seja, a classe final não tem herdeiros, pois ela é a última de sua hierarquia. Em nosso exemplo temos uma conta do tipo poupança que, pela regra de negócio de um banco, não possui uma derivação, ou seja, não deve ser estendida. Para estes casos definimos a classe como final, ou seja, somente existirão objetos da classe poupança e não filhos da mesma, pois o correto é que todas as contas estendam a nossa classe pai Conta e mais nenhuma outra, como mostra o próximo exemplo:
 ```PHP
-<?php 
-    final class ContaPoupanca { 
-        public function resgatar($valor){ 
-        } 
-        public function verSaldo(){ 
-        } 
-    } 
-    $poupanca = new ContaPoupanca(); 
-    $poupanca->resgatar(250); 
+<?php
+    final class ContaPoupanca {
+        public function resgatar($valor){
+        }
+        public function verSaldo(){
+        }
+    }
+    $poupanca = new ContaPoupanca();
+    $poupanca->resgatar(250);
 ?>
 ```
 ##### Métodos Finais
 Também podemos ter métodos finais que jamais podem ser reescritos nas classes filhas. Em nosso exemplo de agência bancária, podemos concluir que o método sacar de uma Conta é padrão para todas as Contas, independentemente de seu tipo. Quando temos uma situação como esta podemos definir estes métodos como final, impedindo assim que eles sejam reescritos e saiam do padrão estabelecido na classe pai, como mostra o exemplo a seguir:
 ```PHP
-<?php 
-    class Conta { 
-        public function depositar($valor){ 
-        } 
-     
-        final public function sacar($valor){ #método final, não pode ser reescrito 
-        } 
-    } 
-    class ContaCorrente extends Conta{ public function depositar(){ 
+<?php
+    class Conta {
+        public function depositar($valor){
+        }
+
+        final public function sacar($valor){ #método final, não pode ser reescrito
+        }
+    }
+    class ContaCorrente extends Conta{ public function depositar(){
         public function depositar(){
         }  
-    } 
+    }
 ?>
 ```
 ##### Traits
 Traits, a partir do PHP 5.4, nos proporcionam uma maneira simples e objetiva de reaproveitamento de código, pois são como classes onde usamos a palavra reservada trait, então escrevemos os métodos que queremos. E para usarmos um trait em uma classe usamos a palavra USE, como podemos observar no próximop exemplo:
 ```PHP
-<?php 
-    class Conta { 
-        public $saldo = 0; 
+<?php
+    class Conta {
+        public $saldo = 0;
         public function getSaldo() {
-            echo "Saldo Atual: {$this->saldo}"; 
-        } 
-    } 
-    trait Acoes { 
-        public function getSaldo(){ 
-            echo "Saldo Disponivel: {$this->saldo}"; 
-        } 
-     
-        public function depositar($valor){ 
-            $this->saldo += $valor; 
-        } 
-     
-        public function sacar($valor){ 
-            if($this->saldo >= $valor) { 
-                $this->saldo -= $valor; 
-            } 
-        } 
-    } 
- 
-    class ContaCorrente extends Conta { 
-        use Acoes; 
-    } 
-    
-    $o = new ContaCorrente(); 
-    $o->depositar(500); 
-    $o->sacar(200); 
-    $o->getSaldo(); 
-    // Saldo Disponivel: 300 
+            echo "Saldo Atual: {$this->saldo}";
+        }
+    }
+    trait Acoes {
+        public function getSaldo(){
+            echo "Saldo Disponivel: {$this->saldo}";
+        }
+
+        public function depositar($valor){
+            $this->saldo += $valor;
+        }
+
+        public function sacar($valor){
+            if($this->saldo >= $valor) {
+                $this->saldo -= $valor;
+            }
+        }
+    }
+
+    class ContaCorrente extends Conta {
+        use Acoes;
+    }
+
+    $o = new ContaCorrente();
+    $o->depositar(500);
+    $o->sacar(200);
+    $o->getSaldo();
+    // Saldo Disponivel: 300
 ?>
  ```
 Note que o método getSaldo() foi reescrito dentro do Trait, ou seja, irá sobrescrever os métodos da classe base (pai). Podemos ainda usar múltiplos traits em nossas classes, como no próximo exemplo.
 ```PHP
-<?php 
-    class Conta { 
-        public $saldo = 0; 
-        public function getSaldo() { 
-            echo "Saldo Atual: {$this->saldo}"; 
-        } 
-    } 
-    trait Acoes { 
-        public function depositar($valor) { 
-            $this->saldo += $valor; 
-        } 
-        public function sacar($valor) { 
+<?php
+    class Conta {
+        public $saldo = 0;
+        public function getSaldo() {
+            echo "Saldo Atual: {$this->saldo}";
+        }
+    }
+    trait Acoes {
+        public function depositar($valor) {
+            $this->saldo += $valor;
+        }
+        public function sacar($valor) {
             if($this->saldo >= $valor) {
-                $this->saldo -= $valor; 
-            } 
-        } 
-    } 
-    trait consultaExtrato { 
-        public function getSaldo() { 
-            echo "Saldo Disponivel para saque:{$this->saldo}<br>"; 
-        } 
-        public function gerarExtrato($periodo) { 
-            echo "Gerando extrato período $periodo aguarde..."; 
-        } 
-    } 
-    class ContaCorrente extends Conta { 
-        use Acoes, consultaExtrato; 
-    } 
-    $o = new ContaCorrente(); 
-    $o->depositar(500); 
-    $o->sacar(200); 
-    $o->getSaldo(); 
-    $o->gerarExtrato('20/01/2013'); 
+                $this->saldo -= $valor;
+            }
+        }
+    }
+    trait consultaExtrato {
+        public function getSaldo() {
+            echo "Saldo Disponivel para saque:{$this->saldo}<br>";
+        }
+        public function gerarExtrato($periodo) {
+            echo "Gerando extrato período $periodo aguarde...";
+        }
+    }
+    class ContaCorrente extends Conta {
+        use Acoes, consultaExtrato;
+    }
+    $o = new ContaCorrente();
+    $o->depositar(500);
+    $o->sacar(200);
+    $o->getSaldo();
+    $o->gerarExtrato('20/01/2013');
 ?>
 ```
 Desta vez temos dois traits com nomes diferentes, e note que sobrescrevemos o método getSaldo() novamente no trait consultaExtrato.
@@ -752,23 +755,23 @@ O PDO veio para solucionar a migração de um banco de dados para outro, do MySQ
 O PDO veio no PHP 5.1 e dá suporte a vários sistemas gerenciadores de banco de dados, como MySQL, PostgreSQL, SQlite, Informix, Oracle, SQL Server, IBM e etc.
 A conexão com um banco de dados através do PDO se dá durante a criação de um objeto da classe PDO, passando informações de conexão com o banco na forma de um DSN (Data Source Name), além das credencias de acesso, como mostra o próximo exemplo.
 ```PHP
-<?php 
-    // MySQL $db = new PDO("mysql:host=localhost;dbname=banco", "root", "senha"); 
- 
-    // PostgreSQL 
- 
-    $db = new PDO("pgsql:host=localhost;dbname=banco", "root", "senha"); 
- 
-    // SQLite 
- 
-    $db = new PDO("sqlite:banco.sqlite"); 
+<?php
+    // MySQL $db = new PDO("mysql:host=localhost;dbname=banco", "root", "senha");
+
+    // PostgreSQL
+
+    $db = new PDO("pgsql:host=localhost;dbname=banco", "root", "senha");
+
+    // SQLite
+
+    $db = new PDO("sqlite:banco.sqlite");
 ?>
 ```
 Veja que criamos a $db que guarda um objeto da classe PDO e entre parênteses passamos o host, nome do banco, usuário e senha. Uma vez que o objeto da classe PDO tenha sido instanciado, conectamos em nosso banco. Para desconectar, basta "matarmos" o objeto ou aguardar que ele seja morto automaticamente ao final de nosso script, como podemos ver a seguir:
 ```PHP
-<?php 
-    $db = new PDO("mysql:host=localhost;dbname=banco", "root", ""); 
-    unset($db); 
+<?php
+    $db = new PDO("mysql:host=localhost;dbname=banco", "root", "");
+    unset($db);
 ?>
 ```
 Veja que utilizamos o unset para encerrar a conexão.
@@ -778,7 +781,7 @@ Depois de conectados temos a nossa disposição uma série de métodos para lida
 ```PHP
 <?php  
     $db = new PDO("mysql:host=localhost;dbname=banco", "root", "");
-   
+
     $db->exec("CREATE TABLE clientes(id INT AUTO_INCREMENT, nome VARCHAR(255), email VARCHAR(255)) ");
 ?>
 ```
@@ -787,35 +790,35 @@ Veja que acessamos o método exec através de nossa conexão com o “->” e cr
 ##### Fazendo Consultas
 Para fazer consultas usamos o método query, que executa um comando SQL e traz para nós linhas de um banco de dados. Veja o próximo exemplo.
 ```PHP
-<?php 
-    $db = new PDO("mysql:host=localhost;dbname=banco", "root", ""); 
-  
-    $dados = $db->query("SELECT * FROM clientes"); 
+<?php
+    $db = new PDO("mysql:host=localhost;dbname=banco", "root", "");
+
+    $dados = $db->query("SELECT * FROM clientes");
 ?>
 ```
 Veja que dentro da $dados é executada uma query que traz todos os dados da tabela clientes. Podemos ainda acessar nossos dados através dos métodos fetch e fetchAll.
 O método fetch retorna apenas um resultado para nós, enquanto o fetchAll irá retornar todos os resultados. Estes métodos retornam tanto um array quando um objeto, dependendo dos parâmetros especificados, como exemplo a seguir.
 ```PHP
-<?php 
-    $db = new PDO("mysql:host=localhost;dbname=banco", "root",""); 
-    $dados = $db->query("SELECT * FROM clientes"); 
-    $todos = $dados->fetchAll(); 
-    $um = $dados->fetch(); 
-    
-    print_r($todos); 
-    print_r($um); 
+<?php
+    $db = new PDO("mysql:host=localhost;dbname=banco", "root","");
+    $dados = $db->query("SELECT * FROM clientes");
+    $todos = $dados->fetchAll();
+    $um = $dados->fetch();
+
+    print_r($todos);
+    print_r($um);
 ?>
 ```
 Note que, por padrão, os métodos retornam índices associativos e numéricos. Podemos fazer com que somente índices associativos sejam mostrados ou apenas numéricos, como mostra o código a seguir
 ```PHP
-<?php 
-    $db = new PDO("mysql:host=localhost;dbname=banco", "root",""); 
-    $dados = $db->query("SELECT * FROM clientes"); 
-    $assoc = $dados->fetchAll(PDO::FETCH_ASSOC); 
-    $num = $dados->fetchAll(PDO::FETCH_NUM); 
-    
-    print_r($assoc); 
-    print_r($num); 
+<?php
+    $db = new PDO("mysql:host=localhost;dbname=banco", "root","");
+    $dados = $db->query("SELECT * FROM clientes");
+    $assoc = $dados->fetchAll(PDO::FETCH_ASSOC);
+    $num = $dados->fetchAll(PDO::FETCH_NUM);
+
+    print_r($assoc);
+    print_r($num);
 ?>
 ```
 Veja que na $assoc queremos que seja retornado resultados em índices associativos, enquanto que na $num retorna apenas índices numéricos.
@@ -827,15 +830,15 @@ Imagine um sistema onde temos que inserir dados em tabelas de estoque, pedido, c
 
 As transações evitam esse tipo de problema através do método beginTransaction do PDO. Após chamarmos o método, todos os comandos feitos não serão automaticamente executados. O PDO irá esperar pelo método commit para efetivar os comandos no banco de dados, ou pelo comando rollback para anular os comandos e desfazer tudo que foi feito. Veja o próximo exemplo.
 ```PHP
-<?php 
-    $db = new PDO("mysql:host=localhost;dbname=banco", "root", ""); 
-    $db->beginTransaction(); 
-    $db->exec("UPDATE pedidos SET compra = 5641"); 
-    $db->exec("UPDATE clientes SET compra = 5641 "); 
-    $db->exec("INSERT INTO logística(compra) VALUES (5641)"); 
-    // Caso tudo tenha dado certo 
-    $db->commit(); 
-    
+<?php
+    $db = new PDO("mysql:host=localhost;dbname=banco", "root", "");
+    $db->beginTransaction();
+    $db->exec("UPDATE pedidos SET compra = 5641");
+    $db->exec("UPDATE clientes SET compra = 5641 ");
+    $db->exec("INSERT INTO logística(compra) VALUES (5641)");
+    // Caso tudo tenha dado certo
+    $db->commit();
+
     // Caso não deu certo $db->rollback();
 ```
 ##### Prepared Statements
@@ -847,17 +850,17 @@ O PDO possui um método chamado prepare que, ao utilizá-lo, o comando não ser�
 ```PHP
 <?php
     $db = new PDO("mysql:host=localhost;dbname=banco", "root", "");
-   
+
     $statement = $db->prepare("INSERT INTO posts (titulo, conteudo) VALUES
      (?, ?)");
 ```
 Note que as interrogações são nossos placeholders, que serão substituídos por variáveis. Para executarmos as statements usamos o método execute, passando como parâmetro um array de variáveis que substituirão os placeholders, como mostra o exemplo a seguir.
 ```PHP
-<?php 
-    $db = new PDO("mysql:host=localhost;dbname=banco", "root", ""); 
-    $statement = $db->prepare("INSERT INTO posts (titulo, conteudo) VALUES (?, ?)"); 
-    $statement->execute(array("Arroz", "Meu primeiro item!")); 
-    $statement->execute(array("Feijão", "Meu segundo item!")); 
+<?php
+    $db = new PDO("mysql:host=localhost;dbname=banco", "root", "");
+    $statement = $db->prepare("INSERT INTO posts (titulo, conteudo) VALUES (?, ?)");
+    $statement->execute(array("Arroz", "Meu primeiro item!"));
+    $statement->execute(array("Feijão", "Meu segundo item!"));
     $statement->execute(array("Tomate", "Meu terceito item!"));
 ```
 Note que temos apenas uma query, mas iremos executar três vezes com três valores diferentes. Estamos passando um array de informações para o método execute, que pegará essas informações e colocará no lugar das interrogações, ou seja, os placeholders.
@@ -925,14 +928,14 @@ CREATE SCHEMA IF NOT EXISTS `guiaestilo` DEFAULT CHARACTER SET utf8 ;
 ```SQL
 /*Não Recomendado*/
 SELECT *
-  FROM (SELECT table1.id AS child, 
+  FROM (SELECT table1.id AS child,
                table2.id AS parent
           FROM table1
           JOIN table2 ON (table2.parent_id = table1.id) ) x;
 
 /*Não Recomendado*/
 SELECT *
-  FROM (SELECT table1.id AS child, 
+  FROM (SELECT table1.id AS child,
                table2.id AS parent
           FROM table1
           JOIN table2 ON (table2.parent_id = table1.id) ) link;
@@ -940,13 +943,13 @@ SELECT *
 
 /*Recomendado*/
 SELECT *
-  FROM (SELECT table1.id AS child, 
+  FROM (SELECT table1.id AS child,
                table2.id AS parent
           FROM table1
           JOIN table2 ON (table2.parent_id = table1.id) ) parentage;
 ```
 
-* Abreviaturas não ajudam em sub-queries para consulta; 
+* Abreviaturas não ajudam em sub-queries para consulta;
 
 #### 2.6 - PADRONIZAÇÃO DE PASTAS
 
@@ -957,7 +960,7 @@ Um editor de textos Open Source que vem crescendo a uma grande velocidade, alcan
 ##### 3.1.1 - Atalhos do teclado
 O Brackets, assim como outros editores e softwares, tem seus atalhos para agilizar o dia-a-dia de quem trabalha com tais ferramentas. Abaixo alguns atalhos interessantes:
 
-**Crtrl+Shift+A**: Abre um input para você digitar uma tag e teclar “Enter”. Fazendo isso, ele irá inserir a tag completa com seu fechamento e seus atributos no html. Ex.: Digite link e tecle “Enter”, ele vai retornar ```<link rel=”stylesheet” href=””>```. E quando você dá “Enter” o “ponteiro” do mouse vai para dentro das aspas do atributo href. Daí, basta você começar a digitar o endereço que ele vai mostrando as opções em forma de codehint. 
+**Crtrl+Shift+A**: Abre um input para você digitar uma tag e teclar “Enter”. Fazendo isso, ele irá inserir a tag completa com seu fechamento e seus atributos no html. Ex.: Digite link e tecle “Enter”, ele vai retornar ```<link rel=”stylesheet” href=””>```. E quando você dá “Enter” o “ponteiro” do mouse vai para dentro das aspas do atributo href. Daí, basta você começar a digitar o endereço que ele vai mostrando as opções em forma de codehint.
 
 **Crtrl+Shift+D**: Esse atalho de grande utilidade também está presente no Brackets. Serve para duplicar uma linha.
 
@@ -966,7 +969,7 @@ O Brackets, assim como outros editores e softwares, tem seus atalhos para agiliz
 **Crtrl+E**: Uma das grandes novidades do Brackets. Com esse atalho você pode editar o CSS sem ter que abrir o arquivo .css. Basta ir em um arquivo .html ou .php clicar sobre o elemento que deseja alterar as propriedades e pressionar Ctrl+E para abrir a tela de edição.
 
 ##### 3.1.2 - Extensões
-Apesar de ser um editor com pouco tempo no mercado já conta com uma grande quantidade de plug-ins para dar aquela incrementada no workflow. Segue alguns deles que podem ser utilizados: 
+Apesar de ser um editor com pouco tempo no mercado já conta com uma grande quantidade de plug-ins para dar aquela incrementada no workflow. Segue alguns deles que podem ser utilizados:
 
 **Brackets Git**: Bastante completo, disponibiliza uma interface para você usar o controle de versões mais utilizado por todos. Para aqueles que não gostam de usar o git através de interfaces, ele te dá, de fácil acesso, um botão que leva diretamente para o terminal, aberto já na pasta do projeto, sem ter que navegar até o projeto pelo terminal.
 
@@ -995,7 +998,7 @@ As configurações necessárias para realizar as regras gerais expostas na seç�
 ##### 3.2.1 - Atalhos do teclado
 O Sublime tem muitos comandos escondidos que podem não estar listados nos menus. Você pode acioná-los pelo teclado acionando os comandos pelo controle de acesso *CMD+SHIFT+P*. A seguir alguns deles:
 
-**Configurando um atalho de comando**: O usuário pode instalar um comando subl no seu terminal para facilitar a abertura de projetos no Sublime via terminal. Você pode conferir o passo a passo da configuração através do seguinte link: Configurandosublime. 
+**Configurando um atalho de comando**: O usuário pode instalar um comando subl no seu terminal para facilitar a abertura de projetos no Sublime via terminal. Você pode conferir o passo a passo da configuração através do seguinte link: Configurandosublime.
 
 **Mútiplas Seleções**: Você pode selecionar vários lugares ao mesmo tempo do seu código de maneira fácil, para isso segure o *CMD ou CTRL* e use o mouse para selecionar diversas partes do seu código.
 
@@ -1026,11 +1029,11 @@ Se você quiser ir para uma linha específica, você pode começar a busca com 
  - Mover a linha para baixo: *CTRL +SHIFT+DOWN*
  - Duplicar linha: *CTRL +SHIFT+D*
  - Juntar linhas: *CTRL +J*
- 
-##### 3.2.2 - Extensões
-Assim como no Brackets o sublime apresenta alguns plug-ins que facilita a vida dos desenvolvedores. Alguns recomendados que você pode utilizar: 
 
-**Package Control**: Antes de instalar qualquer pacote de plug-in, é importante que você já tenha instalado em seu Sublime o Package Control de acordo com a versão do Sublime utilizada. 
+##### 3.2.2 - Extensões
+Assim como no Brackets o sublime apresenta alguns plug-ins que facilita a vida dos desenvolvedores. Alguns recomendados que você pode utilizar:
+
+**Package Control**: Antes de instalar qualquer pacote de plug-in, é importante que você já tenha instalado em seu Sublime o Package Control de acordo com a versão do Sublime utilizada.
 O Package Control é um plug-in que gerencia todos os outros plug-ins do Sublime.
 
 **Emmet**: Este plug-in é simplesmente um conjunto de ferramentas de desenvolvimento web que ajudam a codificação de *HTML* e *CSS*. Ele permite que você crie, com mais velocidade, seus elementos através de expressões específicas, seguidas da tecla *TAB*.
@@ -1051,6 +1054,6 @@ O Package Control é um plug-in que gerencia todos os outros plug-ins do Sublime
 
 **Colorshemeselector**: Esse plug-in permite que você crie uma customização no seu Sublime Text. Resumidamente ele serve para selecionar esquema de cores através do Painel. Infelizmente isso só são adotados cores padrões escolhidas pela ferramenta.
 
-**CSS3**: Esse plug-in serve para manter uma boa organização no CSS. Existem casos onde queremos acabar ir logo embora para casa e acabamos esquecendo um simples ```;```. O CSS3 Syntax ou apenas CSS3 é bem abrangente, pois se baseia nos mais recentes projetos e especificações atuais. Uso: Navegue até View > Syntax > CSS3. 
+**CSS3**: Esse plug-in serve para manter uma boa organização no CSS. Existem casos onde queremos acabar ir logo embora para casa e acabamos esquecendo um simples ```;```. O CSS3 Syntax ou apenas CSS3 é bem abrangente, pois se baseia nos mais recentes projetos e especificações atuais. Uso: Navegue até View > Syntax > CSS3.
 
 **Javascriptnext**: Este é um pacote de sintaxe melhorada para Java Script. Baseia-se nos arquivos de linguagem comumente usados ​​e também inclui novos recursos de ECMAScript 6 como módulos, métodos, arrows functions, classes, geradores e assessores (ES5). Se você quiser usá-lo para cada arquivo js, você ​​cria ou abra um arquivo Java Script, e daí clica no nome de sintaxe no canto inferior direito do Sublime, em seguida, clique em “Abrir todos com extensão atual e depois selecione JavascriptNext – ES6 > JavascriptNext.
