@@ -952,6 +952,12 @@ SELECT *
 * Abreviaturas não ajudam em sub-queries para consulta;
 
 #### 2.6 - PADRONIZAÇÃO DE PASTAS
+#####2.6.1 Assets
+#####2.6.1 Assets
+#####2.6.1 Assets
+#####2.6.1 Assets
+#####2.6.1 Assets
+#####2.6.1 Assets
 
 ### 3 - EDITORES DE TEXTO
 A seguir alguns editores de textos que podem ser utilizados no desenvolvimento dos projetos.
