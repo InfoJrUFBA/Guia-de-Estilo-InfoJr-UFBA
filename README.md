@@ -58,6 +58,22 @@ O guia abaixo é um documento em construção que tem como finalidade padronizar
  2.5 [MYSQL](#25---mysql)
 
  2.6 [PADRONIZAÇÃO DE PASTAS]()
+  
+  2.6.1 - [Models]()
+  
+  2.6.2 - [Views]()
+  
+  2.6.3 - [Controllers]()
+  
+  2.6.4 - [Assets]()
+  
+  2.6.5 - [Vendors]()
+  
+  2.6.6 - [Helpers]()
+  
+  2.6.7 - [Includes]()
+  
+  2.6.8 - [Db]()
 
 3. [EDITORES DE TEXTO](#3---editores-de-texto)
 
@@ -952,12 +968,22 @@ SELECT *
 * Abreviaturas não ajudam em sub-queries para consulta;
 
 #### 2.6 - PADRONIZAÇÃO DE PASTAS
-#####2.6.1 Assets
-#####2.6.1 Assets
-#####2.6.1 Assets
-#####2.6.1 Assets
-#####2.6.1 Assets
-#####2.6.1 Assets
+#####2.6.1 - Models
+#####2.6.2 - Views
+#####2.6.3 - Controllers
+#####2.6.4 - Assets
+- Css
+- Img
+- Js
+
+#####2.6.5 - Vendors
+- Css
+- Img
+- Js
+
+#####2.6.6 - Helpers
+#####2.6.7 - Includes
+#####2.6.8 - Db
 
 ### 3 - EDITORES DE TEXTO
 A seguir alguns editores de textos que podem ser utilizados no desenvolvimento dos projetos.
