@@ -57,23 +57,23 @@ O guia abaixo é um documento em construção que tem como finalidade padronizar
 
  2.5 [MYSQL](#25---mysql)
 
- 2.6 [PADRONIZAÇÃO DE PASTAS]()
+ 2.6 [PADRONIZAÇÃO DE PASTAS](#26---padronizaÇÃo-de-pastas)
   
-  2.6.1 - [Models]()
+  2.6.1 - [Models](#261---models)
   
-  2.6.2 - [Views]()
+  2.6.2 - [Views](#262---views)
   
-  2.6.3 - [Controllers]()
+  2.6.3 - [Controllers](#263---controllers)
   
-  2.6.4 - [Assets]()
+  2.6.4 - [Assets](#264---assets)
   
-  2.6.5 - [Vendors]()
+  2.6.5 - [Vendors](#265---vendors)
   
-  2.6.6 - [Helpers]()
+  2.6.6 - [Helpers](#266---helpers)
   
-  2.6.7 - [Includes]()
+  2.6.7 - [Includes](#267---includes)
   
-  2.6.8 - [Db]()
+  2.6.8 - [Db](#268---db)
 
 3. [EDITORES DE TEXTO](#3---editores-de-texto)
 
