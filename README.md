@@ -968,22 +968,39 @@ SELECT *
 * Abreviaturas não ajudam em sub-queries para consulta;
 
 #### 2.6 - PADRONIZAÇÃO DE PASTAS
+Para a padronização e padrão de projeto é utilizado o modelo MVC (Model, View, Controller). O MVC é nada mais que um padrão de arquitetura de software, separando sua aplicação em 3 camadas. A camada de interação do usuário(view), a camada de manipulação dos dados(model) e a camada de controle(controller). Um dos motivos para utilização do MVC, é por ser plicável a qualquer sistema computacional, além do fato do seu uso ser o mais comum em aplicações Web. A importância apresentada de cada pasta no desenvolvimento do projeto neste documento visam atender o ambiente de desenvolvimento dos projetos.
+
 #####2.6.1 - Models
+A pasta Models é utilizada para manipular informações de forma mais detalhada, sendo recomendado que, sempre que possível, Sempre que você pensar em manipulação de dados, pense em model. Ele é responsável pela leitura e escrita de dados, e também de suas validações.
+
 #####2.6.2 - Views
+A View é responsável pela camada de interação com o usuário. Tudo que o usuário final visualiza, toda a interface, informação, e exibição dos dados, sendo ela por meio de html.
+
 #####2.6.3 - Controllers
+A controller é responsável por receber todas as requisições do usuário. Seus métodos chamados actions são responsáveis por uma página, controlando qual model usar e qual view será mostrado ao usuário. Em outras palavras, é na controller que se decide “se”, “o que”, “quando” e “onde” deve funciona, definindo quais informações devem ser geradas, quais regras devem ser acionadas e para onde as informações devem ir, e quais operações devem ser executadas.
+
 #####2.6.4 - Assets
+Nessa pasta ficarão os recursos de front-end do tema que será desenvolvido. A partir desta pasta serão organizados os estilos e as dependências do tema como:
+
 - Css
 - Img
 - Js
 
 #####2.6.5 - Vendors
+Nessa pasta ficarão qualquer classe ou biblioteca de terceiros. A partir desta pasta serão organizados os estilos e as dependências do tema como:
+
 - Css
 - Img
 - Js
 
 #####2.6.6 - Helpers
+Nessa pasta, serão incluidos os arquivos e classes (`php`) contendo funções para fins genéricos.
+
 #####2.6.7 - Includes
+Nessa pasta, devem conter todos métodos para gerar código HTML que é reaproveitado em vários lugares. Isso optimiza o projeto pois, em vez de ter um bloco de HTML que pode ter várias linhas e concatenações com variáveis, você apenas chama o helper com os parâmetros necessários. 
+
 #####2.6.8 - Db
+
 
 ### 3 - EDITORES DE TEXTO
 A seguir alguns editores de textos que podem ser utilizados no desenvolvimento dos projetos.
